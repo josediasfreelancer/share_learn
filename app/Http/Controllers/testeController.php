@@ -9,7 +9,7 @@ class testeController extends Controller
 
     public function index($id){
 
-        return "passa o número crl!!!" . $id;
+        return "passa o número já!!!" . $id;
 
     }
 

@@ -2,51 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Aplicacao;
 
-use DB;
+use Illuminate\Http\Request;
 
 /**
- * @resource LandingPage
+ * @resource Editar Registo
  *
- * Método geral para chamar a biblioteca de conteúdos e inserção de comentários
+ * Método geral para ler e alterar dados sensíveis do utilizador
  */
 
-
-class LandingPageApiController extends Controller
+class Editar_RegistoApiController extends Controller
 {
     /**
-     * -> Mostra a listagem das aplicações existentes, sendo que também contém comentários e utilizadores associados para cada aplicação.
+     * -> Mostra o nome/email do utilizador.
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index()
     {
-//        $user = User::get();
-//        return $user;
-
-//        $users = DB::table('aplicacao_user')->get();
-//
-//        return $users;
-
-//        $user = User::with('user_tem_apps')->get();
-
-
-
-//funka assim assim
-//        $apps = Aplicacao::with('app_tem_users')->get();
-//
-//        return $apps;
-
-
-        $comentario = Aplicacao::with('app_tem_comentarios','app_tem_users')->get();
-
-        return $comentario;
-
+        //
     }
 
     /**
@@ -60,7 +34,7 @@ class LandingPageApiController extends Controller
     }
 
     /**
-     * -> Inserção de comentários na store
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -93,7 +67,7 @@ class LandingPageApiController extends Controller
     }
 
     /**
-     * -> Editar comentário da store.
+     * -> Altera valores de nome/email/password
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -105,7 +79,7 @@ class LandingPageApiController extends Controller
     }
 
     /**
-     * -> Eliminar comentário da store
+     * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
