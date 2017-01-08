@@ -11,7 +11,7 @@ class Aplicacao extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'id', 'nome', 'descricao', 'imagem', 'ficheiro_inicial', 'ativo_app',
+        'id', 'nome', 'descricao', 'imagem', 'ficheiro_inicial', 'ativo_app','idade' ,'created_at', 'updated_at', 'ref_id_episodios', 'ref_id_disciplinas', 'ref_id_tipos'
     ];
 
 
@@ -24,5 +24,9 @@ class Aplicacao extends Model
 
         return $this->hasMany('App\Comentario', 'ref_id_aplicacao', 'id');
     }
+
+
+
+
 
 }

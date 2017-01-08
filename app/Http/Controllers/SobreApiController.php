@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Aplicacao;
+use DB;
 /**
  * @resource Sobre
  *
- * Método geral para ler/escrever detalhes do utilizador
+ * Método geral para ler os detalhes do utilizador
  */
 class SobreApiController extends Controller
 {
@@ -17,24 +20,35 @@ class SobreApiController extends Controller
      */
     public function index()
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+
+//        $user = User::get();
+//
+//        $output = json_encode(array('data' => $user));
+//
+//        return $output;
+        //        header('Access-Control-Allow-Origin: *');
+        $array_sobre = DB::table('users')
+            ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
+            ->where('users.id_users', '=', 1)
+            ->get();
+
+        $output = json_encode(array('data' => $array_sobre));
+        return $output;
+
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
+
     public function create()
     {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -42,21 +56,25 @@ class SobreApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * -> Lista os detalhes do utilizador
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+        $array_sobre = DB::table('users')
+            ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
+            ->where('users.id_users', '=', $id)
+            ->get();
+
+        $output = json_encode(array('data' => $array_sobre));
+        return $output;
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -64,11 +82,7 @@ class SobreApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -76,10 +90,7 @@ class SobreApiController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {

@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +20,7 @@ class User extends Authenticatable
     protected $primaryKey = 'id_users';
 
     protected $fillable = [
-        'username', 'email', 'password', 'ref_id_users_tipo',
+        'id_users', 'username', 'email', 'password', 'imagem_user', 'area_formacao', 'data_nascimento', 'localidade', 'nacionalidade', 'descricao', 'ref_id_users_tipo',
     ];
 
     /**
@@ -36,6 +37,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Aplicacao', 'aplicacao_user', 'ref_id_users', 'ref_id_aplicacao');
     }
 
+//    new query
+    public function user_tem_comentarios(){
+        return $this->hasMany('App\Comentario', 'ref_id_users', 'id_users');
+    }
 
 
 }

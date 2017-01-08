@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use DB;
 
 /**
  * @resource Editar Perfil
@@ -12,19 +15,23 @@ use Illuminate\Http\Request;
 class Editar_PerfilApiController extends Controller
 {
     /**
-     * -> Mostra a imagem do user, nome, email, data_nascimento, entre outros dados.
+     * -> Lista as informações de todos os users
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+
+        $user = User::get();
+
+        $output = json_encode(array('data' => $user));
+
+        return $output;
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -32,10 +39,7 @@ class Editar_PerfilApiController extends Controller
     }
 
     /**
-     * -> Guarda os dados inseridos no campo vazio
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -43,21 +47,27 @@ class Editar_PerfilApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * -> Mostra os dados de um único utilizador - nome, email, imagem, ...
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+        $dados_perfil = DB::table('users')
+            ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
+            ->where('users.id_users', '=', $id)
+            ->get();
+
+        $output = json_encode(array('data' => $dados_perfil));
+        return $output;
+
+
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -65,7 +75,7 @@ class Editar_PerfilApiController extends Controller
     }
 
     /**
-     * -> Edita os dados de cada campo
+     * -> Edita os dados de cada campo recebido
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -73,17 +83,51 @@ class Editar_PerfilApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+        $data = $request->all();
+
+        if ($request->has('area_formacao')) {
+            $user = User::whereIdUsers($id)->first();
+            $user->area_formacao = $data['area_formacao'];
+            $user->save();
+            return $this->_result('Area de formação editada com sucesso');
+        }
+
+        if ($request->has('data_nascimento')) {
+            $user = User::whereIdUsers($id)->first();
+            $user->email = $data['data_nascimento'];
+            $user->save();
+            return $this->_result('Data de nascimento alterada com sucesso');
+        }
+
+        if ($request->has('localidade')) {
+            $user = User::whereIdUsers($id)->first();
+            $user->password = $data['localidade'];
+            $user->save();
+            return $this->_result('Localidade alterada com sucesso');
+        }
+
+//
+//        DB::table('users')
+//            ->where('id_users', $id)
+//            ->update(['username' => 'nuno']);
+
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {
         //
+    }
+
+    private function _result($data, $status = 0, $msg = 'OK')
+    {
+        return json_encode(array(
+            'status' => $status,
+            'msg' => $msg,
+            'data' => $data
+        ));
     }
 }

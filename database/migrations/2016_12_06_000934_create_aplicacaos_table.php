@@ -34,11 +34,11 @@ class CreateAplicacaosTable extends Migration
             $table->foreign('ref_id_tipos')->references('id_tipos')->on('aplicacoes__tipos')->onDelete('cascade');
         });
 
-        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Quiz Pata', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
-        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Dora a Exploradora', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
-        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['O urso João', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
-        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Carrinha mágica', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
-
+//        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Quiz Pata', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
+//        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Dora a Exploradora', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
+//        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['O urso João', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
+//        DB::insert('insert into aplicacaos(nome, descricao, imagem, ficheiro_inicial, ativo_app, idade, ref_id_episodios, ref_id_disciplinas, ref_id_tipos) values (?,?,?,?,?,?,?,?,?)', ['Carrinha mágica', 'A descrição', 'imagem.jpg', 'file.rar', 1, 11, 1, 1, 1]);
+//
 
     }
 

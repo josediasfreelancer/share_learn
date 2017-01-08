@@ -20,7 +20,7 @@ class CreateCanalTvTable extends Migration
             $table->timestamps();
         });
 
-        DB::insert('insert into canal_tv(nome_canal_tv, imagem_canal_tv) values (?,?)', ['Cartoon Network', 'http://www.top-ten.tv/wp-content/uploads/2013/08/Cartoon-Network-Original-LOGO.png']);
+//        DB::insert('insert into canal_tv(nome_canal_tv, imagem_canal_tv) values (?,?)', ['Cartoon Network', 'http://www.top-ten.tv/wp-content/uploads/2013/08/Cartoon-Network-Original-LOGO.png']);
 
 
     }

@@ -19,10 +19,10 @@ class CreateAplicacoesTiposTable extends Migration
             $table->timestamps();
         });
 
-        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Quiz']);
-        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Palavras-Cruzadas']);
-        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Video']);
-        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Jogo']);
+//        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Quiz']);
+//        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Palavras-Cruzadas']);
+//        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Video']);
+//        DB::insert('insert into aplicacoes__tipos(nome_tipos) values (?)', ['Jogo']);
 
 
     }

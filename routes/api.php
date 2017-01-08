@@ -19,30 +19,30 @@ Route::get('/user', function (Request $request) {
 
 Route::resource('/landingpage', 'LandingPageApiController');
 
-Route::resource('/login', 'Login_RegistoApiController');
+//Route::resource('/login', 'Login_RegistoApiController');
 
-Route::resource('/editar-registo/{id}', 'Editar_RegistoApiController');
+Route::resource('/editar-registo', 'Editar_RegistoApiController');
 
-Route::resource('/editar-perfil/{id}', 'Editar_PerfilApiController');
+Route::resource('/editar-perfil', 'Editar_PerfilApiController');
 
 Route::resource('/biblioteca-geral', 'Biblioteca_GeralApiController');
 
-Route::resource('/biblioteca-geral/{id}/detalhe', 'Biblioteca_Geral_DetalheApiController');
-
-Route::resource('/cronologia/{id}', 'Cronologia_ApiController');
-
-Route::resource('/biblioteca-pessoal', 'Biblioteca_PessoalApiController');
-
-Route::resource('/biblioteca-pessoal/{id}/detalhe', 'Biblioteca_Pessoal_DetalheApiController');
-
-Route::resource('/criar-conteudo', 'Criar_ConteudoApiController');
-
-Route::resource('/upload', 'PublicarApiController');
-
+//Route::resource('/biblioteca-geral/{id}/detalhe', 'Biblioteca_Geral_DetalheApiController');
+//
+//Route::resource('/cronologia/{id}', 'Cronologia_ApiController');
+//
+//Route::resource('/biblioteca-pessoal', 'Biblioteca_PessoalApiController');
+//
+//Route::resource('/biblioteca-pessoal/{id}/detalhe', 'Biblioteca_Pessoal_DetalheApiController');
+//
+//Route::resource('/criar-conteudo', 'Criar_ConteudoApiController');
+//
+//Route::resource('/upload', 'PublicarApiController');
+//
 Route::resource('/look-learn-series', 'Lista_SeriesApiController');
-
-Route::resource('/look-learn-series/{id}/episodio', 'Lista_EpisodiosApiController');
-
-Route::resource('/look-learn-series/{id}/app', 'Corre_AppApiController');
-
-Route::resource('/sobre/{id}/user', 'SobreApiController');
+//
+//Route::resource('/look-learn-series/{id}/episodio', 'Lista_EpisodiosApiController');
+//
+Route::resource('/videos', 'Corre_AppApiController');
+//
+Route::resource('/sobre', 'SobreApiController');

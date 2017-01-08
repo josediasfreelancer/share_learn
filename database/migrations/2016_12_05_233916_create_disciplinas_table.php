@@ -19,7 +19,7 @@ class CreateDisciplinasTable extends Migration
             $table->timestamps();
         });
 
-        DB::insert('insert into disciplinas(nome_disciplinas) values (?)', ['Matemática']);
+//        DB::insert('insert into disciplinas(nome_disciplinas) values (?)', ['Matemática']);
 
 
     }

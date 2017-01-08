@@ -21,11 +21,11 @@ class CreateEpisodiosTable extends Migration
         });
 
         Schema::table('episodios', function(Blueprint $table) {
-            $table->integer('ref_id_episodios')->unsigned();
-            $table->foreign('ref_id_episodios')->references('id_series')->on('series')->onDelete('cascade');
+            $table->integer('ref_id_series')->unsigned();
+            $table->foreign('ref_id_series')->references('id_series')->on('series')->onDelete('cascade');
         });
 
-        DB::insert('insert into episodios(nome_episodios, imagem_episodios, ref_id_episodios) values (?,?,?)', ['DeeDeemensional', 'http://tbsila.cdn.turner.com/toonla/images/cnemea/content/375/downloadable/dexter/uk/dexter01_600x400.jpg', 1]);
+//        DB::insert('insert into episodios(nome_episodios, imagem_episodios, ref_id_episodios) values (?,?,?)', ['DeeDeemensional', 'http://tbsila.cdn.turner.com/toonla/images/cnemea/content/375/downloadable/dexter/uk/dexter01_600x400.jpg', 1]);
 
 
 

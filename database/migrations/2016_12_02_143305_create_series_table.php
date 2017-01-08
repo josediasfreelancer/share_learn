@@ -25,8 +25,8 @@ class CreateSeriesTable extends Migration
             $table->foreign('ref_id_canal')->references('id_canal_tv')->on('canal_tv')->onDelete('cascade');
         });
 
-        DB::insert('insert into series(nome_series, imagem_series, ref_id_canal) values (?,?,?)', ['Dexter', 'http://tbsila.cdn.turner.com/toonla/images/cnemea/content/375/downloadable/dexter/uk/dexter01_600x400.jpg', 1]);
-
+//        DB::insert('insert into series(nome_series, imagem_series, ref_id_canal) values (?,?,?)', ['Dexter', 'http://tbsila.cdn.turner.com/toonla/images/cnemea/content/375/downloadable/dexter/uk/dexter01_600x400.jpg', 1]);
+//        DB::insert('insert into series(nome_series, imagem_series, ref_id_canal) values (?,?,?)', ['Cow and Chicken', 'http://assets2.pop-buzz.com/2015/39/cow-and-chicken-1443625206-responsive-large-0.jpg', 1]);
 
     }
 

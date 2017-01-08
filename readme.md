@@ -36,7 +36,7 @@ A documentação desenvolvida para o  projeto poderá ser encontrada na [documen
 
 7 - Definir configurações de banco de dados no arquivo .env (nome, senha do usuário)
 
-8 - por agora não há sementes, mas existem algumas inserções predefinidas para o banco de dados.
+8 -  Correr "php artisan migrate --seed"
 
 ## Notas
 

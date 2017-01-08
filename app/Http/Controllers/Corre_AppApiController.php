@@ -2,30 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Aplicacao;
 use Illuminate\Http\Request;
-
+use DB;
 
 /**
- * @resource Look&Learn - Quiz
+ * @resource Look&Learn - Video
  *
- * Método geral para correr um quiz criado
+ * Método geral para correr um video que foi submetido no Share&Learn
  */
 class Corre_AppApiController extends Controller
 {
     /**
-     * -> Mostra o quiz
+     * -> Mostra todos os videos
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $videos = DB::table('aplicacaos')
+            ->select('aplicacaos.nome', 'aplicacaos.ficheiro_inicial')
+            ->get();
+
+        $output = json_encode(array('data' => $videos));
+        return $output;
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -33,10 +37,7 @@ class Corre_AppApiController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -44,21 +45,24 @@ class Corre_AppApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Caminho para percorrer o video
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $video = DB::table('aplicacaos')
+            ->select('aplicacaos.nome', 'aplicacaos.ficheiro_inicial')
+            ->where('aplicacaos.id', '=', $id)
+            ->get();
+
+        $output = json_encode(array('data' => $video));
+        return $output;
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -66,11 +70,7 @@ class Corre_AppApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -78,10 +78,7 @@ class Corre_AppApiController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {

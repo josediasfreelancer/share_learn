@@ -19,8 +19,8 @@ class CreateUsersTipoTable extends Migration
             $table->timestamps();
         });
 
-        DB::insert('insert into users_tipo(designacao) values (?)', ['user']);
-        DB::insert('insert into users_tipo(designacao) values (?)', ['admin']);
+//        DB::insert('insert into users_tipo(designacao) values (?)', ['user']);
+//        DB::insert('insert into users_tipo(designacao) values (?)', ['admin']);
 
     }
 
