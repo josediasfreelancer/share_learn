@@ -17,8 +17,8 @@ class CreateAplicacaosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('descricao');
-            $table->string('imagem');
-            $table->string('ficheiro_inicial');
+            $table->string('imagem', 300);
+            $table->string('ficheiro_inicial', 300);
             $table->boolean('ativo_app');
             $table->integer('idade');
             $table->timestamps();

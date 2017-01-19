@@ -25,6 +25,13 @@ class Aplicacao extends Model
         return $this->hasMany('App\Comentario', 'ref_id_aplicacao', 'id');
     }
 
+//    public function series(){
+//        return $this->hasOne('App\Series', 'id_series', 'ref_id_series');
+//    }
+
+    public function series(){
+        return $this->hasOne('App\Series', 'id_series', 'ref_id_episodios');
+    }
 
 
 

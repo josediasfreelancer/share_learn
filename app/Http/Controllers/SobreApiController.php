@@ -13,6 +13,11 @@ use DB;
  */
 class SobreApiController extends Controller
 {
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin: *');
+//        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
     /**
      * -> Lista os detalhes do utilizador
      *
@@ -64,6 +69,7 @@ class SobreApiController extends Controller
     public function show($id)
     {
         header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $array_sobre = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', $id)

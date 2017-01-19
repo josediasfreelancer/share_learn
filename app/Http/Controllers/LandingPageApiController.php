@@ -22,11 +22,10 @@ header("Access-Control-Allow-Origin: *");
 
 class LandingPageApiController extends Controller
 {
-    //API Security
     public function __construct()
     {
         header('Access-Control-Allow-Origin: *');
-        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api', ['except' => ['index','show']]);
     }
 
     /**
@@ -122,6 +121,9 @@ class LandingPageApiController extends Controller
      */
     public function store(Request $request)
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $data = $request->all();
 
 //        var_dump($data); die();
@@ -130,13 +132,13 @@ class LandingPageApiController extends Controller
                 'comentarios_texto' => 'required',
                 'ref_id_aplicacao' =>'required',
                 'ref_id_users'=>'required',
-//                'imagem_user' => 'required|image',
+                'imagem_user' => 'required|image',
             ],
             [
                 'comentarios_texto.required' => 'Necessita de inserir um comentário para enviar a mensagem',
                 'ref_id_aplicacao.required' => 'Necessita de existir uma aplicação',
                 'ref_id_users.required' => 'Necessita de existir uma user',
-//                'imagem_user' => 'O campo de imagem é obrigatório',
+                'imagem_user' => 'O campo de imagem é obrigatório',
             ]
         );
 
@@ -147,16 +149,16 @@ class LandingPageApiController extends Controller
             return $this->_result($errors, 1, 'NOK');
         }
 
-//        $path = $request->file('imagem_user')->hashname();
-//        $request->file('imagem_user')->move(public_path('images/profile'), $path);
+        $path = $request->file('imagem_user')->hashname();
+        $request->file('imagem_user')->move(public_path('images/profile'), $path);
 
         Comentario::create(
             [
                 'comentarios_texto' => $data['comentarios_texto'],
                 'ativo' => 1,
                 'ref_id_aplicacao' => $data['ref_id_aplicacao'],
-                'ref_id_users' => $data['ref_id_users']
-//                'image' => $path
+                'ref_id_users' => $data['ref_id_users'],
+                'image' => $path
             ]
         );
 
@@ -183,7 +185,7 @@ class LandingPageApiController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -218,6 +220,9 @@ class LandingPageApiController extends Controller
      */
     public function upload(Request $request)
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $data = $request->all();
 
         $validator = Validator::make($data, [

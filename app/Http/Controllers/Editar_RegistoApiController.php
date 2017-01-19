@@ -16,14 +16,21 @@ use DB;
 
 class Editar_RegistoApiController extends Controller
 {
+
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin: *');
+//        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
     /**
-     * -> Mostra o nome/email do utilizador.
+     * -> Mostra o nome/email de todos os utilizadores.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $user = User::get();
 
@@ -33,9 +40,7 @@ class Editar_RegistoApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -54,7 +59,7 @@ class Editar_RegistoApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostra um único utilizador de acordo com o seu ID
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -62,6 +67,7 @@ class Editar_RegistoApiController extends Controller
     public function show($id)
     {
         header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $dados_perfil = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', $id)
@@ -72,10 +78,7 @@ class Editar_RegistoApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -92,6 +95,7 @@ class Editar_RegistoApiController extends Controller
     public function update(Request $request, $id)
     {
         header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $data = $request->all();
 
         if ($request->has('username')) {

@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
-
 use DB;
 use Illuminate\Support\Facades\Input;
 
@@ -21,16 +20,16 @@ use Illuminate\Support\Facades\Input;
 /**
  * @resource Biblioteca Geral
  *
- * Método geral para listar todas as aplicações de second screen existentes
+ * Controlador para listar todas as aplicações de second screen existentes
  */
 class Biblioteca_GeralApiController extends Controller
 {
 
-//    public function __construct()
-//    {
-//        $this->middleware('auth:api');
-//    }
-
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin: *');
+//        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
 
     /**
      * -> Lista as aplicações de todos os utilizadores e permite query das series por parametros de url
@@ -54,13 +53,16 @@ class Biblioteca_GeralApiController extends Controller
 
         if($request->has('nome_series')){
             $series->where('nome_series', $request->nome_series);
+
+
         }
 
-//        return $series->get();
+        $series2 = Series::with('apps')->get();
+
 
         $aplicacoes = Aplicacao::get();
-
-        $output = json_encode(array('data' => $aplicacoes, 'data2'=>$series->get()));
+//
+        $output = json_encode(array('data' => $aplicacoes, 'data2'=>$series->get(), 'data3' => $series2));
 
 //        $array_landingpage = Canaltv::with('series')->get();
 
@@ -76,9 +78,7 @@ class Biblioteca_GeralApiController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -86,10 +86,7 @@ class Biblioteca_GeralApiController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -104,6 +101,8 @@ class Biblioteca_GeralApiController extends Controller
      */
     public function show($id)
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $biblioteca_detalhe = Aplicacao::whereId($id)->first();
 
 //        $limit = Input::get('limit') ?:3;
@@ -155,6 +154,8 @@ class Biblioteca_GeralApiController extends Controller
      */
     public function destroy($id)
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $app = Aplicacao::whereId($id)->first();
         $app->delete();
 

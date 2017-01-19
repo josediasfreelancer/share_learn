@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use Validator;
+use DB;
 
 /**
  * @resource Login/Registo
@@ -12,20 +16,44 @@ use Illuminate\Http\Request;
 
 class Login_RegistoApiController extends Controller
 {
+
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin: *');
+//        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
     /**
-     * -> Lê o input do utilizador no client side e compara com valores da db. Se retornar um output negativo, o acesso não foi permitido.
+     * -> Login de utilizador
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+
+//        $users = User::get();
+//
+////        $users = DB::table('users')->select('username', 'email')->get();
+//
+//        return $users;
+
+//        $user = User::find(1);
+//
+//        Auth::login($user);
+//        $id = Auth::id();
+//        return $user;
+
+        $user = User::find(54);
+//        Auth::login($user);
+        // Creating a token without scopes...
+        $token = $user->createToken('Token Name')->accessToken;
+        $output = json_encode(array('data' => $token));
+        return $output;
+
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -33,21 +61,53 @@ class Login_RegistoApiController extends Controller
     }
 
     /**
-     * -> Guarda um utilizador novo na store
+     * -> Registar utilizador
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
+        $data = $request->all();
+
+        $validator = Validator::make($data,
+            [
+                'username' => 'required',
+                'email' =>'required',
+                'password'=>'required',
+            ],
+            [
+                'username.required' => 'Necessita de inserir um nome',
+                'email.required' => 'Necessita de inserir um email',
+                'password.required' => 'Necessita de inserir uma password',
+            ]
+        );
+
+        if($validator->fails()){
+
+            $errors = $validator->errors()->all();
+
+            return $this->_result($errors, 1, 'NOK');
+        }
+
+        User::create(
+            [
+                'username' => $data['username'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'ref_id_users_tipo' => 1,
+            ]
+        );
+
+        return $this->_result('Registo inserido com sucesso');
+
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -55,10 +115,7 @@ class Login_RegistoApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -66,11 +123,7 @@ class Login_RegistoApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -78,13 +131,57 @@ class Login_RegistoApiController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {
         //
     }
+
+    /**
+     * -> Verifica se o input do user corresponde ao da base de dados
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function validacao(Request $request){
+
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
+        $data = $request->all();
+
+        if (Auth::attempt(array('email' => $data['email'], 'password' => $data['password'])))
+        {
+
+
+//            $user = DB::table('users')
+//                ->select('users.*')
+//                ->where('username', '=', $data['username'])
+//                ->get();
+
+//// Creating a token without scopes...
+//            $user = User::find(1);
+//            $token = $user->createToken('Token Name')->accessToken;
+//
+//        $output = json_encode(array('data' => $token));
+//        return $output;
+
+            return $this->_result('Entrou');
+
+        }
+        else{
+            return $this->_result('Email ou password errada');
+        }
+    }
+
+    private function _result($data, $status = 0, $msg = 'OK')
+    {
+        return json_encode(array(
+            'status' => $status,
+            'msg' => $msg,
+            'data' => $data
+        ));
+    }
+
 }
