@@ -26,6 +26,7 @@ class HomeController extends Controller
     {
 
         return view('home');
+
 //        $id = Auth::user();
 //        return $this->_result($id);
 //        return redirect('/api/biblioteca-geral');

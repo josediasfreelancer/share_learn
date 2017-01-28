@@ -29,11 +29,11 @@ Route::resource('/editar-perfil', 'Editar_PerfilApiController');
 
 Route::resource('/biblioteca-geral', 'Biblioteca_GeralApiController');
 
-Route::post('/editar-perfil/{id}', 'Editar_PerfilApiController@updateProfile2')->where('id', '[0-9]+');
+Route::post('/editar-perfil/{id}', 'Editar_PerfilApiController@updateProfile')->where('id', '[0-9]+');
 
 //Route::resource('/biblioteca-geral/{id}/detalhe', 'Biblioteca_Geral_DetalheApiController');
 //
-//Route::resource('/cronologia/{id}', 'Cronologia_ApiController');
+Route::resource('/cronologia/', 'Cronologia_ApiController');
 //
 //Route::resource('/biblioteca-pessoal', 'Biblioteca_PessoalApiController');
 //
@@ -54,6 +54,8 @@ Route::post('/look-learn-series/query', 'Lista_SeriesApiController@query');
 Route::resource('/videos', 'Corre_AppApiController');
 //
 Route::resource('/sobre', 'SobreApiController');
+
+//Route::get('/logout', 'Login_RegistoApiController@logout');
 
 
 

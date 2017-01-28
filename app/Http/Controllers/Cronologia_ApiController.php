@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 /**
  * @resource Cronologia
@@ -12,6 +13,12 @@ use Illuminate\Http\Request;
 
 class Cronologia_ApiController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * -> Lista as minhas aplicações com comentários associados, e imagem pessoal
      *
@@ -19,7 +26,7 @@ class Cronologia_ApiController extends Controller
      */
     public function index()
     {
-        //
+        return Auth::user();
     }
 
     /**

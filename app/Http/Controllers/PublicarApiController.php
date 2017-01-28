@@ -6,6 +6,7 @@ use App\Aplicacao;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
+use Intervention\Image\Facades\Image;
 
 /**
  * @resource Upload
@@ -17,7 +18,6 @@ class PublicarApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
 //        $this->middleware('auth:api', ['except' => ['index','show']]);
     }
     /**
@@ -48,8 +48,6 @@ class PublicarApiController extends Controller
      */
     public function store(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
 
@@ -59,7 +57,7 @@ class PublicarApiController extends Controller
                 'descricao' =>'required',
                 'idade'=>'required',
                 'ref_id_series' => 'required',
-                'imagem' => 'required',
+                'imagem' => 'required|image',
                 'ficheiro_inicial'=>'required',
             ],
             [
@@ -79,18 +77,19 @@ class PublicarApiController extends Controller
             return $this->_result($errors, 1, 'NOK');
         }
 
-//        //insere o path do ficheiro na BD e adiciona o ficheiro no servidor
-//        $file = $request->file('imagem');
-//        $path = $file->hashname();
+        //insere o path do ficheiro na BD e adiciona o ficheiro no servidor
+        $file = $request->file('imagem');
+        $path = $file->hashname();
 //        $file->move(public_path('images/app'), $path);
-//        $image_path = 'images/app/' . $path;
+        Image::make($file->getRealPath())->resize(600, 400)->save('images/app/' . $path);
+        $image_path = 'images/app/' . $path;
 
         Aplicacao::create(
             [
                 'nome' => $data['nome'],
                 'descricao' => $data['descricao'],
-//                'imagem' => $image_path,
-                'imagem' => $data['imagem'],
+                'imagem' => $image_path,
+//                'imagem' => $data['imagem'],
                 'ficheiro_inicial' => $data['ficheiro_inicial'],
                 'ativo_app' => 1,
                 'idade' => $data['idade'],
@@ -100,7 +99,7 @@ class PublicarApiController extends Controller
             ]
         );
 
-        //insere o autor da aplicação
+        //insere o autor da aplicação - ao ter o id do user, esta função torna-se dinâmica
         DB::insert('insert into aplicacao_user(ref_id_users, ref_id_aplicacao) values (?,?)', [1,1]);
 
 

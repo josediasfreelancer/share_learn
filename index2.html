@@ -1,0 +1,26 @@
+<html>
+<script></script>
+<body>
+
+<!--
+ESTE CÓDIGO APENAS VAI FAZER UM REDIRECIONAMENTO PARA O URL DA APLICAÇÃO EM LARAVEL
+O UTILIZAR FARÁ LOGIN (se ainda não fez)
+E DARÁ PERMISSÃO DE ACESSO (ou recusará)
+
+ATENÇÃO AOS PARÂMETROS NO URL.
+Primeiro terá de ser criado um Client, com o redirect URL a apontar para a app cliente
+e colocar aqui o client_id gerado e o redirect_uri
+AMBOS TÊM DE SER EXATAMENTE O QUE EXISTE NO LARAVEL SENÃO NÃO É VALIDADO
+-->
+
+<h2> OAuth2 oversimplified </h2>
+
+<a href="http://josedias.zapto.org/oauth/authorize?
+	client_id=1
+	&redirect_uri=http://shareandlearn.zapto.org/public/%23/callbackreact/
+	&response_type=code
+	&scope">
+	<button>login</button>
+</a>
+</body>
+</html>

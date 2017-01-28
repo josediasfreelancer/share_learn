@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
                 'email' => $faker->email,
                 'password' => $password ?: $password = bcrypt('secret'),
                 'remember_token' => str_random(60),
-                'imagem_user' => 'https://app.awolacademy.com/img/avatar.png',
+                'imagem_user' => 'images/profile/user1.png',
                 'ref_id_users_tipo' => 1
             ]);
         }

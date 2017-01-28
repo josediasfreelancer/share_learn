@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use DB;
 use Validator;
-
+use Intervention\Image\Facades\Image;
 
 
 /**
@@ -109,10 +109,14 @@ class Editar_PerfilApiController extends Controller
 
             if ($request->hasFile('imagem_user')) {
 
+
                 $file = $request->file('imagem_user');
 
                 $path = $file->hashname();
-                $file->move(public_path('images/profile'), $path);
+
+//                $file->move(public_path('images/profile'), $path);
+
+                Image::make($file->getRealPath())->resize(200, 200)->save('images/profile/' . $path);
 
                 $user->imagem_user = 'images/profile/' . $path;
                 $user->save();

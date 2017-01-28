@@ -19,8 +19,7 @@ class Login_RegistoApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+        $this->middleware('auth:api');
     }
     /**
      * -> Login de utilizador
@@ -29,26 +28,20 @@ class Login_RegistoApiController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
 
-//        $users = User::get();
-//
-////        $users = DB::table('users')->select('username', 'email')->get();
-//
-//        return $users;
+        $dadosuser =  Auth::user();
 
-//        $user = User::find(1);
-//
-//        Auth::login($user);
-//        $id = Auth::id();
-//        return $user;
+        $output = json_encode(array('data' => $dadosuser));
 
-        $user = User::find(54);
-//        Auth::login($user);
-        // Creating a token without scopes...
-        $token = $user->createToken('Token Name')->accessToken;
-        $output = json_encode(array('data' => $token));
         return $output;
+
+//        $user = User::find(54);
+////        Auth::login($user);
+//        // Creating a token without scopes...
+//        $token = $user->createToken('Token Name')->accessToken;
+//        $output = json_encode(array('data' => $token));
+//        return $output;
+
 
     }
 
@@ -68,8 +61,6 @@ class Login_RegistoApiController extends Controller
      */
     public function store(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
 
@@ -146,8 +137,6 @@ class Login_RegistoApiController extends Controller
      */
     public function validacao(Request $request){
 
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
 
@@ -173,6 +162,11 @@ class Login_RegistoApiController extends Controller
         else{
             return $this->_result('Email ou password errada');
         }
+    }
+
+    public function logout(){
+
+        Auth::logout();
     }
 
     private function _result($data, $status = 0, $msg = 'OK')
