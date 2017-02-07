@@ -27,8 +27,7 @@ class Biblioteca_GeralApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
 
     /**
@@ -38,7 +37,6 @@ class Biblioteca_GeralApiController extends Controller
      */
     public function index(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
 
 //        if($request->exists('series')){
 //            return Series::orderBy('nome_series', 'asc')->get();
@@ -53,24 +51,24 @@ class Biblioteca_GeralApiController extends Controller
 
         if($request->has('nome_series')){
             $series->where('nome_series', $request->nome_series);
-
-
         }
 
         $series2 = Series::with('apps')->get();
 
 
-        $aplicacoes = Aplicacao::get();
-//
+        $id = 53;
+//        $aplicacoes = Aplicacao::get();
+
+        $aplicacoes = DB::table('aplicacaos')
+            ->select('aplicacaos.*', 'aplicacao_user.*', 'users.username as autor')
+            ->join('aplicacao_user', 'aplicacao_user.ref_id_aplicacao', '=' , 'aplicacaos.id')
+            ->join('users', 'users.id_users', '=' , 'ref_id_users')
+            ->whereIdUsers($id)
+            ->get();
+
+
         $output = json_encode(array('data' => $aplicacoes, 'data2'=>$series->get(), 'data3' => $series2));
 
-//        $array_landingpage = Canaltv::with('series')->get();
-
-//            return Series::where('nome_series', $request->nome_series)->get();
-
-//        $array_series = Series::get();
-
-//        $output = json_encode(array('data' => $array_biblioteca, 'data2'=>$array_series));
 
         return $output;
 
@@ -94,29 +92,20 @@ class Biblioteca_GeralApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostra as aplicações de um utilizador
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        $biblioteca_detalhe = Aplicacao::whereId($id)->first();
 
-//        $limit = Input::get('limit') ?:3;
-//        $users = User::paginate($limit);
-//
-//        return $this->respond([
-//            'data' => $users->all(),
-//            'paginator' => [
-//                'total_count' => $users->getTotal(),
-//                'total_pages' => ceil($users->getTotal() / $users-> getPerPage()),
-//                'current_page' => $users->getCurrentPage(),
-//                'limit' => $users->getPerPage(),
-//            ]
-//        ]);
+        $biblioteca_detalhe = DB::table('aplicacaos')
+            ->select('aplicacaos.*', 'aplicacao_user.*', 'users.id_users as id_autor', 'users.username as autor')
+            ->join('aplicacao_user', 'aplicacao_user.ref_id_aplicacao', '=' , 'aplicacaos.id')
+            ->join('users', 'users.id_users', '=' , 'ref_id_users')
+            ->whereId($id)->first();
+
 
 
         $output = json_encode(array('data' => $biblioteca_detalhe));
@@ -124,10 +113,7 @@ class Biblioteca_GeralApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -135,11 +121,7 @@ class Biblioteca_GeralApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -154,10 +136,10 @@ class Biblioteca_GeralApiController extends Controller
      */
     public function destroy($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $app = Aplicacao::whereId($id)->first();
         $app->delete();
+
+//        DB::table('aplicacao_user')->where('ref_id_aplicacao', 33)->delete();
 
         return $this->_result('Aplicacao removida com sucesso');
     }

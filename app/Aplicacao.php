@@ -17,7 +17,7 @@ class Aplicacao extends Model
 
     public function app_tem_users(){
 
-        return $this->belongsToMany('App\User', 'aplicacao_user', 'ref_id_aplicacao', 'ref_id_users');
+        return $this->belongsToMany('App\User', 'aplicacao_user', 'ref_id_aplicacao', 'ref_id_users')->withTimestamps('created_at', 'updated_at');
     }
 
     public function app_tem_comentarios(){

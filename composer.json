@@ -10,7 +10,8 @@
         "mpociot/laravel-apidoc-generator": "^1.7",
         "laravel/passport": "^1.0",
         "intervention/image": "^2.3",
-        "barryvdh/laravel-cors": "^0.8.5"
+        "barryvdh/laravel-cors": "^0.8.5",
+        "laravel/socialite": "2.0.20"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

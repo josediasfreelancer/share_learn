@@ -11,8 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Validator;
 use DB;
 
-header("Access-Control-Allow-Origin: *");
-
 /**
  * @resource LandingPage
  *
@@ -24,8 +22,7 @@ class LandingPageApiController extends Controller
 {
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
 
     /**
@@ -36,22 +33,6 @@ class LandingPageApiController extends Controller
 
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $paginator = User::paginate();
-//        $user = $paginator->getCollection();
-//
-//        return $user;
-
-//        $users = User::get();
-//        return $users;
-
-//        $users = DB::table('aplicacao_user')->get();
-//
-//        return $users;
-
-//        $user = User::with('user_tem_apps')->get();
-
-
 
         $aplicacoes = Aplicacao::get();
         $apps = [];
@@ -73,33 +54,8 @@ class LandingPageApiController extends Controller
         }
 
 
-//        $array_landingpage = Aplicacao::with('app_tem_comentarios','app_tem_users')->get();
-
-//        $array_landingpage = Comentario::with('comentarios_do_user')->get();
-
-        /*$array_landingpage = DB::table('aplicacaos')
-            ->join('comentarios', 'aplicacaos.id', '=', 'comentarios.ref_id_aplicacao')
-            ->join('users', 'users.id_users', '=', 'comentarios.ref_id_users')
-            ->select('aplicacaos.id','aplicacaos.nome', 'aplicacaos.descricao', 'aplicacaos.imagem', 'comentarios.id_comentarios', 'comentarios.comentarios_texto','users.username')
-//            ->where('aplicacaos.id', '=', 'comentarios.ref_id_aplicacao')
-            ->get();*/
-
-
-//      ------ lista os comentarios de um user  -------
-//        $array_landingpage = User::with('user_tem_comentarios')->get();
-
-//        $output = json_encode(array(
-//            'data' => $apps
-//        ));
-
-        //        $output = json_encode(
-//            $apps
-//        );
-//
-//        $users =  Users::get();
-//
         $output = json_encode(array('data' => $apps));
-//
+
         return $output;
 
 
@@ -121,24 +77,21 @@ class LandingPageApiController extends Controller
      */
     public function store(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
-
 //        var_dump($data); die();
         $validator = Validator::make($data,
             [
                 'comentarios_texto' => 'required',
                 'ref_id_aplicacao' =>'required',
                 'ref_id_users'=>'required',
-                'imagem_user' => 'required|image',
+//                'imagem_user' => 'required|image',
             ],
             [
                 'comentarios_texto.required' => 'Necessita de inserir um comentário para enviar a mensagem',
                 'ref_id_aplicacao.required' => 'Necessita de existir uma aplicação',
                 'ref_id_users.required' => 'Necessita de existir uma user',
-                'imagem_user' => 'O campo de imagem é obrigatório',
+//                'imagem_user' => 'O campo de imagem é obrigatório',
             ]
         );
 
@@ -149,8 +102,8 @@ class LandingPageApiController extends Controller
             return $this->_result($errors, 1, 'NOK');
         }
 
-        $path = $request->file('imagem_user')->hashname();
-        $request->file('imagem_user')->move(public_path('images/profile'), $path);
+//        $path = $request->file('imagem_user')->hashname();
+//        $request->file('imagem_user')->move(public_path('images/profile'), $path);
 
         Comentario::create(
             [
@@ -158,33 +111,33 @@ class LandingPageApiController extends Controller
                 'ativo' => 1,
                 'ref_id_aplicacao' => $data['ref_id_aplicacao'],
                 'ref_id_users' => $data['ref_id_users'],
-                'image' => $path
+//                'image' => $path
             ]
         );
 
-//        if (Auth::check()) {
-//            // The user is logged in...
-//            Comentario::create(
-//                [
-//                    'comentarios_texto' => $data['comentarios_texto'],
-//                    'ativo' => 1,
-//                    'ref_id_aplicacao' => 1,
-//                    'ref_id_users' => 1,
-//                ]
-//            );
-//        }
 
         $comentario = Comentario::get();
-//        return $this->_result($comentario);
         return $comentario;
 
     }
 
     /**
-     * @hideFromAPIDocumentation
+     * -> Lista os comentários de uma série
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+        $app = DB::table('aplicacaos')
+            ->select('comentarios.*', 'users.*')
+            ->join('comentarios', 'comentarios.ref_id_aplicacao', '=', 'aplicacaos.id')
+            ->join('users', 'comentarios.ref_id_users', '=', 'id_users')
+            ->whereId($id)->get();
+
+        $output = json_encode(array('data' => $app));
+
+        return $output;
 
     }
 
@@ -215,13 +168,11 @@ class LandingPageApiController extends Controller
     /**
      * -> Upload de imagem
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function upload(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
 

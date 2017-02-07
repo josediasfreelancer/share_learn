@@ -20,19 +20,20 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * -> Lista as minhas aplicações com comentários associados, e imagem pessoal
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function index()
     {
-        return Auth::user();
+        $dadosuser =  Auth::user();
+
+        $output = json_encode(array('data' => $dadosuser));
+
+        return $output;
+
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -40,10 +41,7 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * -> Inserir comentário
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -51,10 +49,7 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -62,10 +57,7 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -73,11 +65,7 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * -> Altera o meu comentário
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -85,10 +73,7 @@ class Cronologia_ApiController extends Controller
     }
 
     /**
-     * -> Elimina o meu comentário
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {

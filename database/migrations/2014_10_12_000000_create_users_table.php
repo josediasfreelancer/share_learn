@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             $table->rememberToken();
             $table->timestamps();
-            $table->string('imagem_user', 300)->default('https://app.awolacademy.com/img/avatar.png');
+            $table->string('imagem_user', 300)->default('images/profile/user1.png');
             $table->string('area_formacao', 75)->nullable();
             $table->dateTime('data_nascimento')->nullable();
             $table->string('localidade', 50)->nullable();

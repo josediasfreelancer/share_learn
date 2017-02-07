@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Aplicacao;
+use App\User;
 use Illuminate\Http\Request;
+
 use Validator;
 use DB;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @resource Upload
@@ -18,12 +21,11 @@ class PublicarApiController extends Controller
 
     public function __construct()
     {
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+        $this->middleware('auth:api');
     }
+
     /**
-     * -> Mostra uma lista de aplicações já existentes
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function index()
     {
@@ -31,9 +33,7 @@ class PublicarApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -41,13 +41,15 @@ class PublicarApiController extends Controller
     }
 
     /**
-     * -> Armazena parâmetros necessários para que a aplicação fique disponível na biblioteca
+     * -> Armazena texto de uma nova aplicação
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
+        $id_user = Auth::id();
 
         $data = $request->all();
 
@@ -57,40 +59,26 @@ class PublicarApiController extends Controller
                 'descricao' =>'required',
                 'idade'=>'required',
                 'ref_id_series' => 'required',
-                'imagem' => 'required|image',
-                'ficheiro_inicial'=>'required',
             ],
             [
                 'nome.required' => 'Necessita de inserir um comentário para enviar a mensagem',
                 'descricao.required' => 'Necessita de existir uma aplicação',
                 'idade.required' => 'Necessita de existir uma user',
                 'ref_id_series' => 'Tem de associar a uma serie',
-                'imagem.required' => 'O campo de imagem é obrigatório',
-                'ficheiro_inicial' => 'O video é obrigatório',
             ]
         );
 
         if($validator->fails()){
-
             $errors = $validator->errors()->all();
-
             return $this->_result($errors, 1, 'NOK');
         }
-
-        //insere o path do ficheiro na BD e adiciona o ficheiro no servidor
-        $file = $request->file('imagem');
-        $path = $file->hashname();
-//        $file->move(public_path('images/app'), $path);
-        Image::make($file->getRealPath())->resize(600, 400)->save('images/app/' . $path);
-        $image_path = 'images/app/' . $path;
 
         Aplicacao::create(
             [
                 'nome' => $data['nome'],
                 'descricao' => $data['descricao'],
-                'imagem' => $image_path,
-//                'imagem' => $data['imagem'],
-                'ficheiro_inicial' => $data['ficheiro_inicial'],
+                'imagem' => 'vazio',
+                'ficheiro_inicial' => 'vazio',
                 'ativo_app' => 1,
                 'idade' => $data['idade'],
                 'ref_id_episodios' => $data['ref_id_series'],
@@ -99,19 +87,18 @@ class PublicarApiController extends Controller
             ]
         );
 
-        //insere o autor da aplicação - ao ter o id do user, esta função torna-se dinâmica
-        DB::insert('insert into aplicacao_user(ref_id_users, ref_id_aplicacao) values (?,?)', [1,1]);
+        ///ir buscar ultima inserção na tabela de aplicações
+        $app = Aplicacao::orderBy('created_at', 'desc')->first();
 
+        //associa o id do utilizador a uma aplicação no pivot
+        $user = User::find($id_user);
+        $user->user_tem_apps()->attach($app);
 
         return $this->_result('Publicação feita com sucesso');
-
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -119,10 +106,7 @@ class PublicarApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -130,11 +114,7 @@ class PublicarApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -142,14 +122,48 @@ class PublicarApiController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * -> Armazena imagem e vídeo da nova aplicação
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function upimagem(Request $request){
+
+        $user = Aplicacao::orderBy('created_at', 'desc')->first();
+
+        if ($user) {
+
+            if ($request->hasFile('imagem')) {
+                $file = $request->file('imagem');
+                $path = $file->hashname();
+                Image::make($file->getRealPath())->resize(600, 400)->save('images/app/' . $path);
+                $user->imagem = 'images/app/' . $path;
+                $user->save();
+            }
+
+            if($request->hasFile('ficheiro_inicial')){
+                $file2 = $request->file('ficheiro_inicial');
+                $path2 = $file2->hashname();
+                $file2->move(public_path('videos'), $path2);
+                $user->ficheiro_inicial = 'videos/' .$path2;
+                $user->save();
+
+                return $this->_result('Ficheiros submetidos com sucesso');
+            }
+
+            else {
+                return $this->_result('Erro de submisao');
+            }
+        }
+        return $this->_result('User invalid', 404, 'Not Found');
     }
 
     private function _result($data, $status = 0, $msg = 'OK')

@@ -39,7 +39,7 @@ class HomeController extends Controller
 //            \Illuminate\Support\Facades\Auth::logout();
 //            return $this->_result('loggout done');
 //        } else {
-//            return $this->_result('loggout fodete');
+//            return $this->_result('loggout');
 //        }
 //    }
 //

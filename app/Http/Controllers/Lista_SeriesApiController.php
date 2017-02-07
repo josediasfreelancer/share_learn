@@ -18,8 +18,7 @@ class Lista_SeriesApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
     /**
      * -> Mostra todas as séries
@@ -30,7 +29,6 @@ class Lista_SeriesApiController extends Controller
     public function index()
     {
 
-        header('Access-Control-Allow-Origin: *');
         $series = Series::with('apps')->get();
 
         $output = json_encode(array('data' => $series));
@@ -63,8 +61,6 @@ class Lista_SeriesApiController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $apps = DB::table('aplicacaos')->select('aplicacaos.id', 'aplicacaos.nome', 'aplicacaos.imagem','ficheiro_inicial' , 'series.nome_series')
             ->join('series', 'aplicacaos.ref_id_episodios', '=' , 'series.id_series')
@@ -100,10 +96,14 @@ class Lista_SeriesApiController extends Controller
         //
     }
 
+    /**
+     * -> Lista uma aplicação
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function listaApp($id){
 
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $aplicacoes = Aplicacao::whereId($id)->first();
 
@@ -112,10 +112,14 @@ class Lista_SeriesApiController extends Controller
         return $output;
     }
 
+    /**
+     * Seleciona todas as aplicações associadas a uma série, ou apenas uma aplicação - query por post
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function query(Request $request){
 
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $data = $request->all();
 
         if ($request->has('input')) {
@@ -136,13 +140,38 @@ class Lista_SeriesApiController extends Controller
                 $output = json_encode(array('data' => $apps));
                 return $output;
             }
-
-
         }
 
         else{
             return "input inválido";
         }
+    }
+
+    /**
+     * Seleciona todas as aplicações de uma série - via GET
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function query2(Request $request){
+
+//        $series = (new Aplicacao)->newQuery();
+//
+//        if($request->has('nome_series')){
+//            $series->join('aplicacaos', 'aplicacaos.ref_id_episodios', '=' , 'series.id_series')
+//                ->where('nome_series', $request->nome_series);
+//        }
+
+//        $series = (new Series)->newQuery();
+
+        $apps = DB::table('series')
+            ->select('aplicacaos.*')
+            ->join('aplicacaos', 'aplicacaos.ref_id_episodios', '=' , 'series.id_series')
+            ->where('series.nome_series', '=' , $request->nome_series);
+
+
+        $output = json_encode(array('data2'=>$apps->get()));
+        return $output;
 
 
     }

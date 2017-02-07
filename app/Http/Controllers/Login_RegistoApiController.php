@@ -19,12 +19,10 @@ class Login_RegistoApiController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api');
+//        $this->middleware('auth:api');
     }
     /**
-     * -> Login de utilizador
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function index()
     {
@@ -34,13 +32,6 @@ class Login_RegistoApiController extends Controller
         $output = json_encode(array('data' => $dadosuser));
 
         return $output;
-
-//        $user = User::find(54);
-////        Auth::login($user);
-//        // Creating a token without scopes...
-//        $token = $user->createToken('Token Name')->accessToken;
-//        $output = json_encode(array('data' => $token));
-//        return $output;
 
 
     }
@@ -130,10 +121,7 @@ class Login_RegistoApiController extends Controller
     }
 
     /**
-     * -> Verifica se o input do user corresponde ao da base de dados
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function validacao(Request $request){
 
@@ -142,19 +130,6 @@ class Login_RegistoApiController extends Controller
 
         if (Auth::attempt(array('email' => $data['email'], 'password' => $data['password'])))
         {
-
-
-//            $user = DB::table('users')
-//                ->select('users.*')
-//                ->where('username', '=', $data['username'])
-//                ->get();
-
-//// Creating a token without scopes...
-//            $user = User::find(1);
-//            $token = $user->createToken('Token Name')->accessToken;
-//
-//        $output = json_encode(array('data' => $token));
-//        return $output;
 
             return $this->_result('Entrou');
 

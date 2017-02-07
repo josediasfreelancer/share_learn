@@ -52,66 +52,119 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "data": [
-        {
-            "id": 2,
-            "nome": "Dora a Exploradora",
-            "descricao": "A descrição",
-            "imagem": "imagem.jpg",
-            "ficheiro_inicial": "file.rar",
-            "ativo_app": 1,
-            "idade": 11,
-            "created_at": "2017-01-09 16:17:22",
-            "updated_at": "2017-01-09 16:17:22",
-            "ref_id_episodios": 1,
-            "ref_id_disciplinas": 1,
-            "ref_id_tipos": 1
-        },
-        {
-            "id": 3,
-            "nome": "O urso João",
-            "descricao": "A descrição",
-            "imagem": "imagem.jpg",
-            "ficheiro_inicial": "file.rar",
-            "ativo_app": 1,
-            "idade": 11,
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
-            "ref_id_episodios": 1,
-            "ref_id_disciplinas": 1,
-            "ref_id_tipos": 1
-        },
-        {
-            "id": 4,
-            "nome": "Carrinha mágica",
-            "descricao": "A descrição",
-            "imagem": "imagem.jpg",
-            "ficheiro_inicial": "file.rar",
-            "ativo_app": 1,
-            "idade": 11,
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
-            "ref_id_episodios": 1,
-            "ref_id_disciplinas": 1,
-            "ref_id_tipos": 1
-        }
-    ],
+    "data": [],
     "data2": [
         {
             "id_series": 1,
             "nome_series": "Dexter",
             "imagem_series": "http:\/\/tbsila.cdn.turner.com\/toonla\/images\/cnemea\/content\/375\/downloadable\/dexter\/uk\/dexter01_600x400.jpg",
-            "created_at": "2017-01-09 16:17:21",
-            "updated_at": "2017-01-09 16:17:21",
+            "created_at": "2017-01-14 18:14:22",
+            "updated_at": "2017-01-14 18:14:22",
             "ref_id_canal": 1
         },
         {
             "id_series": 2,
             "nome_series": "Cow and Chicken",
             "imagem_series": "http:\/\/assets2.pop-buzz.com\/2015\/39\/cow-and-chicken-1443625206-responsive-large-0.jpg",
-            "created_at": "2017-01-09 16:17:21",
-            "updated_at": "2017-01-09 16:17:21",
+            "created_at": "2017-01-14 18:14:23",
+            "updated_at": "2017-01-14 18:14:23",
             "ref_id_canal": 1
+        },
+        {
+            "id_series": 3,
+            "nome_series": "toze",
+            "imagem_series": "asdsadzqwdd",
+            "created_at": "2017-02-08 00:00:00",
+            "updated_at": "2017-02-15 00:00:00",
+            "ref_id_canal": 1
+        }
+    ],
+    "data3": [
+        {
+            "id_series": 1,
+            "nome_series": "Dexter",
+            "imagem_series": "http:\/\/tbsila.cdn.turner.com\/toonla\/images\/cnemea\/content\/375\/downloadable\/dexter\/uk\/dexter01_600x400.jpg",
+            "created_at": "2017-01-14 18:14:22",
+            "updated_at": "2017-01-14 18:14:22",
+            "ref_id_canal": 1,
+            "apps": [
+                {
+                    "id": 3,
+                    "nome": "O urso João",
+                    "descricao": "A descrição",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
+                    "ref_id_episodios": 1,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 1
+                },
+                {
+                    "id": 4,
+                    "nome": "Carrinha mágica",
+                    "descricao": "A descrição",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
+                    "ref_id_episodios": 1,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 1
+                }
+            ]
+        },
+        {
+            "id_series": 2,
+            "nome_series": "Cow and Chicken",
+            "imagem_series": "http:\/\/assets2.pop-buzz.com\/2015\/39\/cow-and-chicken-1443625206-responsive-large-0.jpg",
+            "created_at": "2017-01-14 18:14:23",
+            "updated_at": "2017-01-14 18:14:23",
+            "ref_id_canal": 1,
+            "apps": [
+                {
+                    "id": 2,
+                    "nome": "Dora a Exploradora",
+                    "descricao": "A descrição",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
+                    "ref_id_episodios": 2,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 1
+                }
+            ]
+        },
+        {
+            "id_series": 3,
+            "nome_series": "toze",
+            "imagem_series": "asdsadzqwdd",
+            "created_at": "2017-02-08 00:00:00",
+            "updated_at": "2017-02-15 00:00:00",
+            "ref_id_canal": 1,
+            "apps": [
+                {
+                    "id": 37,
+                    "nome": "teste",
+                    "descricao": "asdxzaazx<",
+                    "imagem": "<zxz<x<zxz<",
+                    "ficheiro_inicial": "<zx<zcxzxvxz",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-02-15 00:00:00",
+                    "updated_at": "2017-02-07 00:00:00",
+                    "ref_id_episodios": 3,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 4
+                }
+            ]
         }
     ]
 }
@@ -125,7 +178,7 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_a937e1af565b778c570275206e33dd74 -->
 <!-- START_e5523691f36e72fadb1c1cf9a0c6d8cd -->
-## Display the specified resource.
+## Mostra as aplicações de um utilizador
 
 > Example request:
 
@@ -165,79 +218,6 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_e5523691f36e72fadb1c1cf9a0c6d8cd -->
-<!-- START_897726a4aae848033e843897889a3607 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl "http://localhost/api/biblioteca-geral/{biblioteca_geral}/edit" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/biblioteca-geral/{biblioteca_geral}/edit",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-> Example response:
-
-```json
-null
-```
-
-### HTTP Request
-`GET api/biblioteca-geral/{biblioteca_geral}/edit`
-
-`HEAD api/biblioteca-geral/{biblioteca_geral}/edit`
-
-
-<!-- END_897726a4aae848033e843897889a3607 -->
-<!-- START_3a889cf245139a3f63f233f1cccfe1c7 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl "http://localhost/api/biblioteca-geral/{biblioteca_geral}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/biblioteca-geral/{biblioteca_geral}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`PUT api/biblioteca-geral/{biblioteca_geral}`
-
-`PATCH api/biblioteca-geral/{biblioteca_geral}`
-
-
-<!-- END_3a889cf245139a3f63f233f1cccfe1c7 -->
 <!-- START_2dc7287dde4ce1fab26529db8f353182 -->
 ## -&gt; Eliminar aplicação
 
@@ -306,25 +286,25 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-12 15:39:19",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-27 17:01:18",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null,
             "ref_id_users_tipo": 1
         },
         {
             "id_users": 2,
-            "username": "rippin.ona",
-            "email": "alexandra.morar@yahoo.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-12 16:46:32",
-            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
+            "username": "rkulas",
+            "email": "obogisich@yahoo.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-17 01:16:00",
+            "imagem_user": "C:\\xampp\\tmp\\php6A69.tmp",
             "area_formacao": null,
             "data_nascimento": null,
             "localidade": null,
@@ -334,10 +314,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 3,
-            "username": "crooks.daron",
-            "email": "eloy.rice@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "marjorie.ratke",
+            "email": "wrippin@yahoo.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-14 18:14:24",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -348,10 +328,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 4,
-            "username": "bahringer.adaline",
-            "email": "dedrick.schaefer@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "raynor.ward",
+            "email": "sheridan71@mcdermott.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-14 18:14:24",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -362,10 +342,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 5,
-            "username": "vicky06",
-            "email": "fahey.ashly@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "mante.eli",
+            "email": "elouise39@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -376,10 +356,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 6,
-            "username": "keagan28",
-            "email": "loraine.considine@effertz.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "bwalker",
+            "email": "vallie40@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -390,10 +370,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 7,
-            "username": "funk.aidan",
-            "email": "wcrist@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "ashtyn.bailey",
+            "email": "reilly.marley@kuphal.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -404,10 +384,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 8,
-            "username": "eparker",
-            "email": "fernando.wunsch@jakubowski.org",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "lrobel",
+            "email": "xmonahan@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -418,10 +398,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 9,
-            "username": "hettie29",
-            "email": "elsa75@abbott.biz",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "towne.werner",
+            "email": "bradford10@hansen.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -432,10 +412,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 10,
-            "username": "wilber.schuster",
-            "email": "raoul.keeling@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "meda.witting",
+            "email": "okuneva.mossie@renner.info",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -446,10 +426,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 11,
-            "username": "xkuphal",
-            "email": "pearline.cartwright@hotmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "norris.hilll",
+            "email": "predovic.issac@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -460,10 +440,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 12,
-            "username": "kiley28",
-            "email": "elindgren@west.net",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "camilla83",
+            "email": "mae.crist@gutkowski.biz",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -474,10 +454,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 13,
-            "username": "raphaelle.yost",
-            "email": "clemmie.zboncak@abshire.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "vnicolas",
+            "email": "amari30@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -488,10 +468,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 14,
-            "username": "mayert.jayne",
-            "email": "cleve78@leannon.info",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "ncronin",
+            "email": "scarroll@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -502,10 +482,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 15,
-            "username": "ycollier",
-            "email": "emmalee33@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "lturner",
+            "email": "macy52@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -516,10 +496,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 16,
-            "username": "keanu54",
-            "email": "cletus79@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "bridie.will",
+            "email": "dannie.daniel@haley.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -530,10 +510,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 17,
-            "username": "sonny65",
-            "email": "angelo.lemke@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "edward57",
+            "email": "jerde.howell@lind.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -544,10 +524,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 18,
-            "username": "nicolas.brianne",
-            "email": "ufritsch@gmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "adams.kelvin",
+            "email": "gisselle13@volkman.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -558,10 +538,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 19,
-            "username": "urodriguez",
-            "email": "runte.olaf@vandervort.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "mills.april",
+            "email": "toney34@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -572,10 +552,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 20,
-            "username": "junius.effertz",
-            "email": "daugherty.kelli@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "aufderhar.ken",
+            "email": "nienow.tyree@green.net",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -586,10 +566,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 21,
-            "username": "lizeth22",
-            "email": "renner.brendon@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "maggio.gabriella",
+            "email": "kim.schamberger@haley.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -600,10 +580,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 22,
-            "username": "frobel",
-            "email": "sylvan16@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "ratke.art",
+            "email": "haag.ryley@gmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -614,10 +594,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 23,
-            "username": "zboncak.dariana",
-            "email": "rey.buckridge@koelpin.org",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "david.hirthe",
+            "email": "gmcclure@koss.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -628,10 +608,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 24,
-            "username": "eldon.lemke",
-            "email": "roxane05@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "purdy.buddy",
+            "email": "jeremie.watsica@schroeder.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -642,10 +622,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 25,
-            "username": "david.turner",
-            "email": "cronin.kianna@stroman.info",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "jschuster",
+            "email": "ardith77@runte.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -656,10 +636,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 26,
-            "username": "forrest.abernathy",
-            "email": "champlin.anna@franecki.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "cmcdermott",
+            "email": "warren.rohan@rogahn.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -670,10 +650,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 27,
-            "username": "julia.hansen",
-            "email": "rose.robel@medhurst.info",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "collins.queen",
+            "email": "lindgren.lolita@yahoo.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -684,10 +664,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 28,
-            "username": "douglas.myrna",
-            "email": "robyn.schaefer@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "gwen.rolfson",
+            "email": "kwest@yahoo.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -698,10 +678,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 29,
-            "username": "oheidenreich",
-            "email": "stroman.briana@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "marcelina.renner",
+            "email": "percy.hackett@lindgren.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -712,10 +692,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 30,
-            "username": "gulgowski.amos",
-            "email": "mackenzie61@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "marc04",
+            "email": "cleuschke@gmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -726,10 +706,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 31,
-            "username": "udubuque",
-            "email": "gus44@ernser.biz",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "catalina32",
+            "email": "mona23@kutch.net",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -740,10 +720,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 32,
-            "username": "vfranecki",
-            "email": "ekovacek@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "kris29",
+            "email": "britney.gibson@hotmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -754,10 +734,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 33,
-            "username": "silas.bayer",
-            "email": "franz61@kshlerin.org",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "volkman.andy",
+            "email": "frami.camylle@hotmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -768,10 +748,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 34,
-            "username": "cathrine.kuphal",
-            "email": "ashly40@stoltenberg.net",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "imogene64",
+            "email": "rudy.reichert@yahoo.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -782,10 +762,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 35,
-            "username": "bernhard.odessa",
-            "email": "estefania.von@hamill.biz",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "roob.evalyn",
+            "email": "muhammad69@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -796,10 +776,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 36,
-            "username": "myrtis50",
-            "email": "kian84@ryan.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "torn",
+            "email": "hkutch@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -810,10 +790,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 37,
-            "username": "wfeeney",
-            "email": "katrine95@nader.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "mckenzie.holly",
+            "email": "jast.roxane@bernier.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -824,10 +804,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 38,
-            "username": "mckenzie.johan",
-            "email": "stroman.antonia@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "qsteuber",
+            "email": "bettie.bauch@schroeder.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -838,10 +818,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 39,
-            "username": "webster.parker",
-            "email": "adolphus.gerhold@rowe.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "ssanford",
+            "email": "cdaugherty@murray.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -852,10 +832,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 40,
-            "username": "elza78",
-            "email": "gutkowski.carley@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "clint.tillman",
+            "email": "donato.littel@gutmann.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -866,10 +846,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 41,
-            "username": "nicolas.loy",
-            "email": "denis.roberts@hotmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "koss.moshe",
+            "email": "klocko.maye@kling.net",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -880,10 +860,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 42,
-            "username": "neoma.mckenzie",
-            "email": "lionel02@strosin.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kiera30",
+            "email": "sid.heaney@wisozk.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -894,10 +874,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 43,
-            "username": "green78",
-            "email": "yost.jerrell@lueilwitz.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "ehane",
+            "email": "justice61@sanford.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -908,10 +888,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 44,
-            "username": "russel.cory",
-            "email": "eheathcote@johnson.info",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "oswaldo.abshire",
+            "email": "marcus.tremblay@stroman.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -922,10 +902,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 45,
-            "username": "cokuneva",
-            "email": "pauline60@keeling.biz",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "ulices.marks",
+            "email": "gia.spencer@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -936,10 +916,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 46,
-            "username": "richard53",
-            "email": "hpredovic@gmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "otha.koepp",
+            "email": "hwilkinson@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -950,10 +930,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 47,
-            "username": "walker.nader",
-            "email": "nwolf@yahoo.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "cokeefe",
+            "email": "dane.armstrong@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -964,10 +944,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 48,
-            "username": "andres.mcglynn",
-            "email": "wilson.klein@yahoo.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "armstrong.dorothy",
+            "email": "buckridge.trever@yahoo.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -978,10 +958,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 49,
-            "username": "lincoln83",
-            "email": "genesis.lindgren@bergstrom.org",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kaci.yundt",
+            "email": "hcarroll@weber.net",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -992,10 +972,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 50,
-            "username": "lynch.ward",
-            "email": "kgusikowski@gmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kenyatta88",
+            "email": "zratke@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1006,10 +986,24 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 51,
-            "username": "tostas",
-            "email": "tostas@ua.pt",
-            "created_at": "2017-01-09 23:20:15",
-            "updated_at": "2017-01-10 02:06:11",
+            "username": "laravel",
+            "email": "laravel@ua.pt",
+            "created_at": "2017-01-26 01:14:54",
+            "updated_at": "2017-01-26 01:15:08",
+            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
+            "area_formacao": null,
+            "data_nascimento": null,
+            "localidade": null,
+            "nacionalidade": null,
+            "descricao": null,
+            "ref_id_users_tipo": 1
+        },
+        {
+            "id_users": 52,
+            "username": "laravel2",
+            "email": "laravel2@ua.pt",
+            "created_at": "2017-01-26 01:22:08",
+            "updated_at": "2017-01-26 01:22:12",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1020,10 +1014,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 53,
-            "username": "tostas2",
-            "email": "tostas2@ua.pt",
-            "created_at": "2017-01-11 17:49:46",
-            "updated_at": "2017-01-11 17:49:46",
+            "username": "laravel3",
+            "email": "laravel3@ua.pt",
+            "created_at": "2017-01-26 01:31:39",
+            "updated_at": "2017-01-26 01:42:23",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1034,24 +1028,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 54,
-            "username": "gay",
-            "email": "gay@ua.pt",
-            "created_at": "2017-01-11 20:04:54",
-            "updated_at": "2017-01-11 22:29:22",
-            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
-            "area_formacao": null,
-            "data_nascimento": null,
-            "localidade": null,
-            "nacionalidade": null,
-            "descricao": null,
-            "ref_id_users_tipo": 1
-        },
-        {
-            "id_users": 55,
-            "username": "el_diaz",
-            "email": "rit@ua.pt",
-            "created_at": "2017-01-11 22:29:38",
-            "updated_at": "2017-01-11 22:29:38",
+            "username": "jose",
+            "email": "jose@ua.pt",
+            "created_at": "2017-01-31 18:34:58",
+            "updated_at": "2017-01-31 18:35:03",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1106,12 +1086,12 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null
         }
@@ -1161,7 +1141,7 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_43e47feaba9dfaad0d221661316a1dda -->
 <!-- START_2c8b3feb375ac6166f99bb85bc0f3bd9 -->
-## -&gt; Altera imagem do user - POST
+## -&gt; Altera imagem do user e guarda imagem no servidor- POST
 
 > Example request:
 
@@ -1228,25 +1208,25 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-12 15:39:19",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-27 17:01:18",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null,
             "ref_id_users_tipo": 1
         },
         {
             "id_users": 2,
-            "username": "rippin.ona",
-            "email": "alexandra.morar@yahoo.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-12 16:46:32",
-            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
+            "username": "rkulas",
+            "email": "obogisich@yahoo.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-17 01:16:00",
+            "imagem_user": "C:\\xampp\\tmp\\php6A69.tmp",
             "area_formacao": null,
             "data_nascimento": null,
             "localidade": null,
@@ -1256,10 +1236,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 3,
-            "username": "crooks.daron",
-            "email": "eloy.rice@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "marjorie.ratke",
+            "email": "wrippin@yahoo.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-14 18:14:24",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1270,10 +1250,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 4,
-            "username": "bahringer.adaline",
-            "email": "dedrick.schaefer@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "raynor.ward",
+            "email": "sheridan71@mcdermott.com",
+            "created_at": "2017-01-14 18:14:24",
+            "updated_at": "2017-01-14 18:14:24",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1284,10 +1264,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 5,
-            "username": "vicky06",
-            "email": "fahey.ashly@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "mante.eli",
+            "email": "elouise39@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1298,10 +1278,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 6,
-            "username": "keagan28",
-            "email": "loraine.considine@effertz.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "bwalker",
+            "email": "vallie40@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1312,10 +1292,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 7,
-            "username": "funk.aidan",
-            "email": "wcrist@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "ashtyn.bailey",
+            "email": "reilly.marley@kuphal.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1326,10 +1306,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 8,
-            "username": "eparker",
-            "email": "fernando.wunsch@jakubowski.org",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "lrobel",
+            "email": "xmonahan@gmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1340,10 +1320,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 9,
-            "username": "hettie29",
-            "email": "elsa75@abbott.biz",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "towne.werner",
+            "email": "bradford10@hansen.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1354,10 +1334,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 10,
-            "username": "wilber.schuster",
-            "email": "raoul.keeling@gmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "meda.witting",
+            "email": "okuneva.mossie@renner.info",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1368,10 +1348,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 11,
-            "username": "xkuphal",
-            "email": "pearline.cartwright@hotmail.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "norris.hilll",
+            "email": "predovic.issac@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1382,10 +1362,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 12,
-            "username": "kiley28",
-            "email": "elindgren@west.net",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "camilla83",
+            "email": "mae.crist@gutkowski.biz",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1396,10 +1376,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 13,
-            "username": "raphaelle.yost",
-            "email": "clemmie.zboncak@abshire.com",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "vnicolas",
+            "email": "amari30@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1410,10 +1390,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 14,
-            "username": "mayert.jayne",
-            "email": "cleve78@leannon.info",
-            "created_at": "2017-01-09 16:17:23",
-            "updated_at": "2017-01-09 16:17:23",
+            "username": "ncronin",
+            "email": "scarroll@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1424,10 +1404,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 15,
-            "username": "ycollier",
-            "email": "emmalee33@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "lturner",
+            "email": "macy52@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1438,10 +1418,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 16,
-            "username": "keanu54",
-            "email": "cletus79@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "bridie.will",
+            "email": "dannie.daniel@haley.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1452,10 +1432,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 17,
-            "username": "sonny65",
-            "email": "angelo.lemke@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "edward57",
+            "email": "jerde.howell@lind.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1466,10 +1446,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 18,
-            "username": "nicolas.brianne",
-            "email": "ufritsch@gmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "adams.kelvin",
+            "email": "gisselle13@volkman.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1480,10 +1460,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 19,
-            "username": "urodriguez",
-            "email": "runte.olaf@vandervort.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "mills.april",
+            "email": "toney34@hotmail.com",
+            "created_at": "2017-01-14 18:14:25",
+            "updated_at": "2017-01-14 18:14:25",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1494,10 +1474,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 20,
-            "username": "junius.effertz",
-            "email": "daugherty.kelli@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "aufderhar.ken",
+            "email": "nienow.tyree@green.net",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1508,10 +1488,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 21,
-            "username": "lizeth22",
-            "email": "renner.brendon@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "maggio.gabriella",
+            "email": "kim.schamberger@haley.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1522,10 +1502,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 22,
-            "username": "frobel",
-            "email": "sylvan16@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "ratke.art",
+            "email": "haag.ryley@gmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1536,10 +1516,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 23,
-            "username": "zboncak.dariana",
-            "email": "rey.buckridge@koelpin.org",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "david.hirthe",
+            "email": "gmcclure@koss.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1550,10 +1530,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 24,
-            "username": "eldon.lemke",
-            "email": "roxane05@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "purdy.buddy",
+            "email": "jeremie.watsica@schroeder.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1564,10 +1544,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 25,
-            "username": "david.turner",
-            "email": "cronin.kianna@stroman.info",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "jschuster",
+            "email": "ardith77@runte.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1578,10 +1558,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 26,
-            "username": "forrest.abernathy",
-            "email": "champlin.anna@franecki.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "cmcdermott",
+            "email": "warren.rohan@rogahn.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1592,10 +1572,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 27,
-            "username": "julia.hansen",
-            "email": "rose.robel@medhurst.info",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "collins.queen",
+            "email": "lindgren.lolita@yahoo.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1606,10 +1586,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 28,
-            "username": "douglas.myrna",
-            "email": "robyn.schaefer@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "gwen.rolfson",
+            "email": "kwest@yahoo.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1620,10 +1600,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 29,
-            "username": "oheidenreich",
-            "email": "stroman.briana@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "marcelina.renner",
+            "email": "percy.hackett@lindgren.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1634,10 +1614,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 30,
-            "username": "gulgowski.amos",
-            "email": "mackenzie61@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "marc04",
+            "email": "cleuschke@gmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1648,10 +1628,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 31,
-            "username": "udubuque",
-            "email": "gus44@ernser.biz",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "catalina32",
+            "email": "mona23@kutch.net",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1662,10 +1642,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 32,
-            "username": "vfranecki",
-            "email": "ekovacek@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "kris29",
+            "email": "britney.gibson@hotmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1676,10 +1656,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 33,
-            "username": "silas.bayer",
-            "email": "franz61@kshlerin.org",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "volkman.andy",
+            "email": "frami.camylle@hotmail.com",
+            "created_at": "2017-01-14 18:14:26",
+            "updated_at": "2017-01-14 18:14:26",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1690,10 +1670,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 34,
-            "username": "cathrine.kuphal",
-            "email": "ashly40@stoltenberg.net",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "imogene64",
+            "email": "rudy.reichert@yahoo.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1704,10 +1684,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 35,
-            "username": "bernhard.odessa",
-            "email": "estefania.von@hamill.biz",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "roob.evalyn",
+            "email": "muhammad69@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1718,10 +1698,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 36,
-            "username": "myrtis50",
-            "email": "kian84@ryan.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "torn",
+            "email": "hkutch@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1732,10 +1712,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 37,
-            "username": "wfeeney",
-            "email": "katrine95@nader.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "mckenzie.holly",
+            "email": "jast.roxane@bernier.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1746,10 +1726,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 38,
-            "username": "mckenzie.johan",
-            "email": "stroman.antonia@yahoo.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "qsteuber",
+            "email": "bettie.bauch@schroeder.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1760,10 +1740,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 39,
-            "username": "webster.parker",
-            "email": "adolphus.gerhold@rowe.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "ssanford",
+            "email": "cdaugherty@murray.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1774,10 +1754,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 40,
-            "username": "elza78",
-            "email": "gutkowski.carley@hotmail.com",
-            "created_at": "2017-01-09 16:17:24",
-            "updated_at": "2017-01-09 16:17:24",
+            "username": "clint.tillman",
+            "email": "donato.littel@gutmann.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1788,10 +1768,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 41,
-            "username": "nicolas.loy",
-            "email": "denis.roberts@hotmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "koss.moshe",
+            "email": "klocko.maye@kling.net",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1802,10 +1782,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 42,
-            "username": "neoma.mckenzie",
-            "email": "lionel02@strosin.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kiera30",
+            "email": "sid.heaney@wisozk.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1816,10 +1796,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 43,
-            "username": "green78",
-            "email": "yost.jerrell@lueilwitz.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "ehane",
+            "email": "justice61@sanford.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1830,10 +1810,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 44,
-            "username": "russel.cory",
-            "email": "eheathcote@johnson.info",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "oswaldo.abshire",
+            "email": "marcus.tremblay@stroman.info",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1844,10 +1824,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 45,
-            "username": "cokuneva",
-            "email": "pauline60@keeling.biz",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "ulices.marks",
+            "email": "gia.spencer@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1858,10 +1838,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 46,
-            "username": "richard53",
-            "email": "hpredovic@gmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "otha.koepp",
+            "email": "hwilkinson@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1872,10 +1852,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 47,
-            "username": "walker.nader",
-            "email": "nwolf@yahoo.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "cokeefe",
+            "email": "dane.armstrong@gmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1886,10 +1866,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 48,
-            "username": "andres.mcglynn",
-            "email": "wilson.klein@yahoo.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "armstrong.dorothy",
+            "email": "buckridge.trever@yahoo.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1900,10 +1880,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 49,
-            "username": "lincoln83",
-            "email": "genesis.lindgren@bergstrom.org",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kaci.yundt",
+            "email": "hcarroll@weber.net",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1914,10 +1894,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 50,
-            "username": "lynch.ward",
-            "email": "kgusikowski@gmail.com",
-            "created_at": "2017-01-09 16:17:25",
-            "updated_at": "2017-01-09 16:17:25",
+            "username": "kenyatta88",
+            "email": "zratke@hotmail.com",
+            "created_at": "2017-01-14 18:14:27",
+            "updated_at": "2017-01-14 18:14:27",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1928,10 +1908,24 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 51,
-            "username": "tostas",
-            "email": "tostas@ua.pt",
-            "created_at": "2017-01-09 23:20:15",
-            "updated_at": "2017-01-10 02:06:11",
+            "username": "laravel",
+            "email": "laravel@ua.pt",
+            "created_at": "2017-01-26 01:14:54",
+            "updated_at": "2017-01-26 01:15:08",
+            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
+            "area_formacao": null,
+            "data_nascimento": null,
+            "localidade": null,
+            "nacionalidade": null,
+            "descricao": null,
+            "ref_id_users_tipo": 1
+        },
+        {
+            "id_users": 52,
+            "username": "laravel2",
+            "email": "laravel2@ua.pt",
+            "created_at": "2017-01-26 01:22:08",
+            "updated_at": "2017-01-26 01:22:12",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1942,10 +1936,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 53,
-            "username": "tostas2",
-            "email": "tostas2@ua.pt",
-            "created_at": "2017-01-11 17:49:46",
-            "updated_at": "2017-01-11 17:49:46",
+            "username": "laravel3",
+            "email": "laravel3@ua.pt",
+            "created_at": "2017-01-26 01:31:39",
+            "updated_at": "2017-01-26 01:42:23",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1956,24 +1950,10 @@ $.ajax(settings).done(function (response) {
         },
         {
             "id_users": 54,
-            "username": "gay",
-            "email": "gay@ua.pt",
-            "created_at": "2017-01-11 20:04:54",
-            "updated_at": "2017-01-11 22:29:22",
-            "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
-            "area_formacao": null,
-            "data_nascimento": null,
-            "localidade": null,
-            "nacionalidade": null,
-            "descricao": null,
-            "ref_id_users_tipo": 1
-        },
-        {
-            "id_users": 55,
-            "username": "el_diaz",
-            "email": "rit@ua.pt",
-            "created_at": "2017-01-11 22:29:38",
-            "updated_at": "2017-01-11 22:29:38",
+            "username": "jose",
+            "email": "jose@ua.pt",
+            "created_at": "2017-01-31 18:34:58",
+            "updated_at": "2017-01-31 18:35:03",
             "imagem_user": "https:\/\/app.awolacademy.com\/img\/avatar.png",
             "area_formacao": null,
             "data_nascimento": null,
@@ -1993,38 +1973,6 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_0efb85a8a7ad35d28c29f8df057f0038 -->
-<!-- START_cb1e3ea3e2a21017c4dc6053601764a7 -->
-## Store a newly created resource in storage.
-
-> Example request:
-
-```bash
-curl "http://localhost/api/editar-registo" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/editar-registo",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST api/editar-registo`
-
-
-<!-- END_cb1e3ea3e2a21017c4dc6053601764a7 -->
 <!-- START_f73fcfca559b59070ab7257dd841e0aa -->
 ## Mostra um único utilizador de acordo com o seu ID
 
@@ -2058,12 +2006,12 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null
         }
@@ -2112,38 +2060,6 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_bf29eb298ddd8bd978f95863b10ccef4 -->
-<!-- START_803f642ad1b7458ca6c94a34185dfe43 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl "http://localhost/api/editar-registo/{editar_registo}" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/editar-registo/{editar_registo}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`DELETE api/editar-registo/{editar_registo}`
-
-
-<!-- END_803f642ad1b7458ca6c94a34185dfe43 -->
 #LandingPage
 
 Método geral para chamar a biblioteca de conteúdos e inserção de comentários
@@ -2183,13 +2099,13 @@ $.ajax(settings).done(function (response) {
                 "id": 2,
                 "nome": "Dora a Exploradora",
                 "descricao": "A descrição",
-                "imagem": "imagem.jpg",
-                "ficheiro_inicial": "file.rar",
+                "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
                 "ativo_app": 1,
                 "idade": 11,
-                "created_at": "2017-01-09 16:17:22",
-                "updated_at": "2017-01-09 16:17:22",
-                "ref_id_episodios": 1,
+                "created_at": "2017-01-14 18:14:24",
+                "updated_at": "2017-01-14 18:14:24",
+                "ref_id_episodios": 2,
                 "ref_id_disciplinas": 1,
                 "ref_id_tipos": 1
             }
@@ -2199,12 +2115,12 @@ $.ajax(settings).done(function (response) {
                 "id": 3,
                 "nome": "O urso João",
                 "descricao": "A descrição",
-                "imagem": "imagem.jpg",
-                "ficheiro_inicial": "file.rar",
+                "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
                 "ativo_app": 1,
                 "idade": 11,
-                "created_at": "2017-01-09 16:17:23",
-                "updated_at": "2017-01-09 16:17:23",
+                "created_at": "2017-01-14 18:14:24",
+                "updated_at": "2017-01-14 18:14:24",
                 "ref_id_episodios": 1,
                 "ref_id_disciplinas": 1,
                 "ref_id_tipos": 1
@@ -2215,15 +2131,31 @@ $.ajax(settings).done(function (response) {
                 "id": 4,
                 "nome": "Carrinha mágica",
                 "descricao": "A descrição",
-                "imagem": "imagem.jpg",
-                "ficheiro_inicial": "file.rar",
+                "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
                 "ativo_app": 1,
                 "idade": 11,
-                "created_at": "2017-01-09 16:17:23",
-                "updated_at": "2017-01-09 16:17:23",
+                "created_at": "2017-01-14 18:14:24",
+                "updated_at": "2017-01-14 18:14:24",
                 "ref_id_episodios": 1,
                 "ref_id_disciplinas": 1,
                 "ref_id_tipos": 1
+            }
+        },
+        {
+            "app": {
+                "id": 37,
+                "nome": "teste",
+                "descricao": "asdxzaazx<",
+                "imagem": "<zxz<x<zxz<",
+                "ficheiro_inicial": "<zx<zcxzxvxz",
+                "ativo_app": 1,
+                "idade": 11,
+                "created_at": "2017-02-15 00:00:00",
+                "updated_at": "2017-02-07 00:00:00",
+                "ref_id_episodios": 3,
+                "ref_id_disciplinas": 1,
+                "ref_id_tipos": 4
             }
         }
     ]
@@ -2269,16 +2201,13 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_f5983e644547da07226d5bd4ddad3660 -->
-#Login/Registo
-
-Método geral para chamada de acesso e registo na API, com update de dados
-<!-- START_50799eeda2f2fd956bc1f6a5526b52a1 -->
-## -&gt; Login de utilizador
+<!-- START_979826e38efa7fde07164547e4966121 -->
+## -&gt; Lista os comentários de uma série
 
 > Example request:
 
 ```bash
-curl "http://localhost/api/registo" \
+curl "http://localhost/api/landingpage/{landingpage}" \
 -H "Accept: application/json"
 ```
 
@@ -2286,7 +2215,7 @@ curl "http://localhost/api/registo" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/registo",
+    "url": "http://localhost/api/landingpage/{landingpage}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -2302,17 +2231,20 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAwMjRmMjQ3OThmZGI1MjBiMDRlMzkxNDZkYjM0Mjg0MmQ0ZmQ5YjgwODIxZmZhN2MzMTc1OTk4NjdjODQ0MjkyMDFjNmI0N2NkMTM0NjFkIn0.eyJhdWQiOiIxIiwianRpIjoiMDAyNGYyNDc5OGZkYjUyMGIwNGUzOTE0NmRiMzQyODQyZDRmZDliODA4MjFmZmE3YzMxNzU5OTg2N2M4NDQyOTIwMWM2YjQ3Y2QxMzQ2MWQiLCJpYXQiOjE0ODQyMzk5NzIsIm5iZiI6MTQ4NDIzOTk3MiwiZXhwIjoxNzk5NzcyNzcyLCJzdWIiOiI1NCIsInNjb3BlcyI6W119.sK5nwYl8d60ESSt-KmsnDbjnjpq90VB4CjgLlUAy4-7grZVggzC5IkgOTYgG9WwTIGtPjv5hoCkBgh6PMfAdq1rCNchzaoq1A9kr8Nb_ZC-KCMDeAimxdwj7DULlW_-RU_ntySRdNy30o5GqxTAn_WlbpOXBTR5Pg_vQGbX4TRs7-G02WVBOBdH-INdlW7ho6PKVeh5bV8EiQ4YugOSLRb3qi2KyVUNyX_lmj6CxjWVkxuvz6k0jySAECvsBh9paP1hBmVYbNJd7vnOjWgdU4GyrKxzLk2_X7btXWkU8hrAgxDxNC9AogDNhjjf7VkxvSIvOFNqIcewa6GNlD67APuB_h4nih4jUgmYT52UYJbRDnbc8O8oXvtU5WlAvNDn7AWfdHBUx90dLRYSmG0Wl_oPWWGnEM14a4FT4YC43WxDTPszJJ_Mkjez02nwRqtv2VTMz-YcCs92IanGZbu6A6jQrA2-iZ789DxZYRFS82jFR890y3-G1S8F4icB_fIjpICKPGTb4_1CxQdEJ6PEzkByOVoDum8zkeoTpVCkyxgl1Ct_aHUl2ftlBPZXSL03s5b2n5eP9cddyZqkCZ0KzrjusvKzdo0SwgRAQc-n7xycC6qg8lk-d7i2zXpwqOzmyaXxWL_D6Q1BD-8w9Z4YwkETAlXrhZvWjkzNjvhWCOus"
+    "data": []
 }
 ```
 
 ### HTTP Request
-`GET api/registo`
+`GET api/landingpage/{landingpage}`
 
-`HEAD api/registo`
+`HEAD api/landingpage/{landingpage}`
 
 
-<!-- END_50799eeda2f2fd956bc1f6a5526b52a1 -->
+<!-- END_979826e38efa7fde07164547e4966121 -->
+#Login/Registo
+
+Método geral para chamada de acesso e registo na API, com update de dados
 <!-- START_71f49f7d8533b6e91eb82e351434ebda -->
 ## -&gt; Registar utilizador
 
@@ -2345,38 +2277,6 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_71f49f7d8533b6e91eb82e351434ebda -->
-<!-- START_1dce62b53b3af5134720b8512162c656 -->
-## -&gt; Verifica se o input do user corresponde ao da base de dados
-
-> Example request:
-
-```bash
-curl "http://localhost/api/validacao" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://localhost/api/validacao",
-    "method": "POST",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-
-### HTTP Request
-`POST api/validacao`
-
-
-<!-- END_1dce62b53b3af5134720b8512162c656 -->
 #Look&amp;Learn - Séries
 
 Método geral para listar todas as séries de TV com app de second screen associada
@@ -2415,34 +2315,20 @@ $.ajax(settings).done(function (response) {
             "id_series": 1,
             "nome_series": "Dexter",
             "imagem_series": "http:\/\/tbsila.cdn.turner.com\/toonla\/images\/cnemea\/content\/375\/downloadable\/dexter\/uk\/dexter01_600x400.jpg",
-            "created_at": "2017-01-09 16:17:21",
-            "updated_at": "2017-01-09 16:17:21",
+            "created_at": "2017-01-14 18:14:22",
+            "updated_at": "2017-01-14 18:14:22",
             "ref_id_canal": 1,
             "apps": [
-                {
-                    "id": 2,
-                    "nome": "Dora a Exploradora",
-                    "descricao": "A descrição",
-                    "imagem": "imagem.jpg",
-                    "ficheiro_inicial": "file.rar",
-                    "ativo_app": 1,
-                    "idade": 11,
-                    "created_at": "2017-01-09 16:17:22",
-                    "updated_at": "2017-01-09 16:17:22",
-                    "ref_id_episodios": 1,
-                    "ref_id_disciplinas": 1,
-                    "ref_id_tipos": 1
-                },
                 {
                     "id": 3,
                     "nome": "O urso João",
                     "descricao": "A descrição",
-                    "imagem": "imagem.jpg",
-                    "ficheiro_inicial": "file.rar",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
                     "ativo_app": 1,
                     "idade": 11,
-                    "created_at": "2017-01-09 16:17:23",
-                    "updated_at": "2017-01-09 16:17:23",
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
                     "ref_id_episodios": 1,
                     "ref_id_disciplinas": 1,
                     "ref_id_tipos": 1
@@ -2451,12 +2337,12 @@ $.ajax(settings).done(function (response) {
                     "id": 4,
                     "nome": "Carrinha mágica",
                     "descricao": "A descrição",
-                    "imagem": "imagem.jpg",
-                    "ficheiro_inicial": "file.rar",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
                     "ativo_app": 1,
                     "idade": 11,
-                    "created_at": "2017-01-09 16:17:23",
-                    "updated_at": "2017-01-09 16:17:23",
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
                     "ref_id_episodios": 1,
                     "ref_id_disciplinas": 1,
                     "ref_id_tipos": 1
@@ -2467,10 +2353,49 @@ $.ajax(settings).done(function (response) {
             "id_series": 2,
             "nome_series": "Cow and Chicken",
             "imagem_series": "http:\/\/assets2.pop-buzz.com\/2015\/39\/cow-and-chicken-1443625206-responsive-large-0.jpg",
-            "created_at": "2017-01-09 16:17:21",
-            "updated_at": "2017-01-09 16:17:21",
+            "created_at": "2017-01-14 18:14:23",
+            "updated_at": "2017-01-14 18:14:23",
             "ref_id_canal": 1,
-            "apps": []
+            "apps": [
+                {
+                    "id": 2,
+                    "nome": "Dora a Exploradora",
+                    "descricao": "A descrição",
+                    "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+                    "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-01-14 18:14:24",
+                    "updated_at": "2017-01-14 18:14:24",
+                    "ref_id_episodios": 2,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 1
+                }
+            ]
+        },
+        {
+            "id_series": 3,
+            "nome_series": "toze",
+            "imagem_series": "asdsadzqwdd",
+            "created_at": "2017-02-08 00:00:00",
+            "updated_at": "2017-02-15 00:00:00",
+            "ref_id_canal": 1,
+            "apps": [
+                {
+                    "id": 37,
+                    "nome": "teste",
+                    "descricao": "asdxzaazx<",
+                    "imagem": "<zxz<x<zxz<",
+                    "ficheiro_inicial": "<zx<zcxzxvxz",
+                    "ativo_app": 1,
+                    "idade": 11,
+                    "created_at": "2017-02-15 00:00:00",
+                    "updated_at": "2017-02-07 00:00:00",
+                    "ref_id_episodios": 3,
+                    "ref_id_disciplinas": 1,
+                    "ref_id_tipos": 4
+                }
+            ]
         }
     ]
 }
@@ -2483,6 +2408,176 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_11905ff92dab7e991184d7c1d060d8b4 -->
+<!-- START_ae05f3281de08fed728ead5c8447ea5f -->
+## -&gt; Lista as aplicações associadas à serie selecionada
+
+> Example request:
+
+```bash
+curl "http://localhost/api/look-learn-series/{look_learn_series}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/look-learn-series/{look_learn_series}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data": [
+        {
+            "id": 3,
+            "nome": "O urso João",
+            "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+            "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+            "nome_series": "Dexter"
+        },
+        {
+            "id": 4,
+            "nome": "Carrinha mágica",
+            "imagem": "http:\/\/vignette2.wikia.nocookie.net\/nickelodeon\/images\/b\/b1\/Gib-mir-10!.jpg\/revision\/latest?cb=20101008133109&path-prefix=de",
+            "ficheiro_inicial": "https:\/\/www.youtube.com\/watch?v=HSlon_3VBn4&feature=youtu.be",
+            "nome_series": "Dexter"
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET api/look-learn-series/{look_learn_series}`
+
+`HEAD api/look-learn-series/{look_learn_series}`
+
+
+<!-- END_ae05f3281de08fed728ead5c8447ea5f -->
+<!-- START_95a6ce0deea53be8ecebef8600802c28 -->
+## -&gt; Lista uma aplicação
+
+> Example request:
+
+```bash
+curl "http://localhost/api/look-learn-app/{id}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/look-learn-app/{id}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data": null
+}
+```
+
+### HTTP Request
+`GET api/look-learn-app/{id}`
+
+`HEAD api/look-learn-app/{id}`
+
+
+<!-- END_95a6ce0deea53be8ecebef8600802c28 -->
+<!-- START_4f88f054fdccd19673dcce104919cbe4 -->
+## Seleciona todas as aplicações associadas a uma série, ou apenas uma aplicação - query por post
+
+> Example request:
+
+```bash
+curl "http://localhost/api/look-learn-series/query" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/look-learn-series/query",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/look-learn-series/query`
+
+
+<!-- END_4f88f054fdccd19673dcce104919cbe4 -->
+<!-- START_166b963a85f7d02ac8517921b9ce4b9e -->
+## Seleciona todas as aplicações de uma série - via GET
+
+> Example request:
+
+```bash
+curl "http://localhost/api/look-learn-query" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/look-learn-query",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data2": []
+}
+```
+
+### HTTP Request
+`GET api/look-learn-query`
+
+`HEAD api/look-learn-query`
+
+
+<!-- END_166b963a85f7d02ac8517921b9ce4b9e -->
 #Look&amp;Learn - Video
 
 Método geral para correr um video que foi submetido no Share&amp;Learn
@@ -2516,20 +2611,7 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "data": [
-        {
-            "nome": "Dora a Exploradora",
-            "ficheiro_inicial": "file.rar"
-        },
-        {
-            "nome": "O urso João",
-            "ficheiro_inicial": "file.rar"
-        },
-        {
-            "nome": "Carrinha mágica",
-            "ficheiro_inicial": "file.rar"
-        }
-    ]
+    "error": "Unauthenticated."
 }
 ```
 
@@ -2570,7 +2652,7 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "data": []
+    "error": "Unauthenticated."
 }
 ```
 
@@ -2617,12 +2699,12 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null
         }
@@ -2638,7 +2720,7 @@ $.ajax(settings).done(function (response) {
 
 <!-- END_766877fd20e6f8e0b3033e309aeffceb -->
 <!-- START_798a0529285c2c785d8326c0f9866e0e -->
-## -&gt; Lista os detalhes do utilizador
+## -&gt; Lista os detalhes do utilizador por id
 
 > Example request:
 
@@ -2670,12 +2752,12 @@ $.ajax(settings).done(function (response) {
     "data": [
         {
             "id_users": 1,
-            "username": "umueller",
-            "email": "casimir00@gmail.com",
-            "imagem_user": "images\/profile\/7bc64c64c69211f2917e1227a385f226.png",
+            "username": "ola",
+            "email": "evans05@hotmail.com",
+            "imagem_user": "images\/profile\/50535cc40c31bb54ac3f776ebddf87e6.png",
             "area_formacao": null,
             "data_nascimento": null,
-            "localidade": "lisboa2",
+            "localidade": null,
             "nacionalidade": null,
             "descricao": null
         }
@@ -2690,3 +2772,70 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_798a0529285c2c785d8326c0f9866e0e -->
+#Upload
+
+Método geral para upload de aplicações e acesso ao editor de conteúdos
+<!-- START_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
+## -&gt; Armazena texto de uma nova aplicação
+
+> Example request:
+
+```bash
+curl "http://localhost/api/upload" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/upload",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/upload`
+
+
+<!-- END_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
+<!-- START_9155e3895a43c0e8245d74bf78c005cc -->
+## -&gt; Armazena imagem e vídeo da nova aplicação
+
+> Example request:
+
+```bash
+curl "http://localhost/api/uploadimagem" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/uploadimagem",
+    "method": "POST",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/uploadimagem`
+
+
+<!-- END_9155e3895a43c0e8245d74bf78c005cc -->

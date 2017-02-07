@@ -19,8 +19,7 @@ class Editar_RegistoApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
     /**
      * -> Mostra o nome/email de todos os utilizadores.
@@ -29,8 +28,6 @@ class Editar_RegistoApiController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $user = User::get();
 
@@ -48,10 +45,7 @@ class Editar_RegistoApiController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -66,8 +60,7 @@ class Editar_RegistoApiController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $dados_perfil = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', $id)
@@ -94,8 +87,7 @@ class Editar_RegistoApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $data = $request->all();
 
         if ($request->has('username')) {
@@ -126,10 +118,7 @@ class Editar_RegistoApiController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {

@@ -23,8 +23,7 @@ class Editar_PerfilApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
 
     /**
@@ -34,8 +33,6 @@ class Editar_PerfilApiController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $user = User::get();
 
@@ -72,8 +69,7 @@ class Editar_PerfilApiController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $dados_perfil = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', $id)
@@ -101,8 +97,7 @@ class Editar_PerfilApiController extends Controller
      */
     public function updateProfile($id, Request $request) {
 
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $user = User::find($id);
 
         if ($user) {
@@ -139,8 +134,6 @@ class Editar_PerfilApiController extends Controller
      */
     public function updateProfile2($id, Request $request){
 
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
         $data = $request->all();
 
@@ -176,8 +169,7 @@ class Editar_PerfilApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $data = $request->all();
 
         if ($request->has('area_formacao')) {

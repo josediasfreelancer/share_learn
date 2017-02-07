@@ -56,6 +56,13 @@
                                 </div>
 
                                 <div class="form-group text-left">
+                                    <div class="col-md-6">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group text-left">
                                     <div class="col-md-8 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary col-md-6 col-sm-4" id="login-submit" tabindex="4" name="login-submit">
                                             Login
@@ -63,6 +70,20 @@
 
                                     </div>
                                 </div>
+                                <div class="form-group text-left">
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-offset-4 col-lg-offset-4">
+                                        <a class="btn btn-primary col-xs-3 col-md-6 col-sm-6 googleicon" href="{{ route('google.login') }}">
+                                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-md-4">
+
+                                </div>
+
+
                             </form>
 
                             {{--registar--}}
@@ -113,8 +134,6 @@
                             </form>
 
 
-
-
                         </div>
                     </div>
                 </div>
@@ -152,3 +171,4 @@
 
 </script>
 
+<script src="https://use.fontawesome.com/4b11aac8a2.js"></script>

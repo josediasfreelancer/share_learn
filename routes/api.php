@@ -31,6 +31,29 @@ Route::resource('/biblioteca-geral', 'Biblioteca_GeralApiController');
 
 Route::post('/editar-perfil/{id}', 'Editar_PerfilApiController@updateProfile')->where('id', '[0-9]+');
 
+Route::resource('/upload', 'PublicarApiController');
+
+Route::resource('/look-learn-series', 'Lista_SeriesApiController');
+
+Route::get('look-learn-app/{id}', 'Lista_SeriesApiController@listaApp');
+
+Route::post('/look-learn-series/query', 'Lista_SeriesApiController@query');
+
+Route::resource('/videos', 'Corre_AppApiController');
+
+Route::resource('/sobre', 'SobreApiController');
+
+Route::post('/uploadimagem', 'PublicarApiController@upimagem');
+
+Route::get('/look-learn-query','Lista_SeriesApiController@query2');
+
+
+// Paths abandonados
+
+//Route::get('/logout', 'Login_RegistoApiController@logout');
+
+//Route::resource('/look-learn-series/{id}/episodio', 'Lista_EpisodiosApiController');
+
 //Route::resource('/biblioteca-geral/{id}/detalhe', 'Biblioteca_Geral_DetalheApiController');
 //
 Route::resource('/cronologia/', 'Cronologia_ApiController');
@@ -40,22 +63,4 @@ Route::resource('/cronologia/', 'Cronologia_ApiController');
 //Route::resource('/biblioteca-pessoal/{id}/detalhe', 'Biblioteca_Pessoal_DetalheApiController');
 //
 //Route::resource('/criar-conteudo', 'Criar_ConteudoApiController');
-//
-Route::resource('/upload', 'PublicarApiController');
-//
-Route::resource('/look-learn-series', 'Lista_SeriesApiController');
-
-Route::get('look-learn-app/{id}', 'Lista_SeriesApiController@listaApp');
-
-Route::post('/look-learn-series/query', 'Lista_SeriesApiController@query');
-//
-//Route::resource('/look-learn-series/{id}/episodio', 'Lista_EpisodiosApiController');
-//
-Route::resource('/videos', 'Corre_AppApiController');
-//
-Route::resource('/sobre', 'SobreApiController');
-
-//Route::get('/logout', 'Login_RegistoApiController@logout');
-
-
 

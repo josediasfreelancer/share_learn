@@ -16,8 +16,7 @@ class Corre_AppApiController extends Controller
 
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+        $this->middleware('auth:api');
     }
 
     /**
@@ -27,7 +26,6 @@ class Corre_AppApiController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
         $videos = DB::table('aplicacaos')
             ->select('aplicacaos.nome', 'aplicacaos.ficheiro_inicial')
             ->get();
@@ -60,8 +58,7 @@ class Corre_AppApiController extends Controller
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $video = DB::table('aplicacaos')
             ->select('aplicacaos.nome', 'aplicacaos.ficheiro_inicial')
             ->where('aplicacaos.id', '=', $id)

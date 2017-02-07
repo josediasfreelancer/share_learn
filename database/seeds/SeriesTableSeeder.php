@@ -19,10 +19,15 @@ class SeriesTableSeeder extends Seeder
 
         \App\Series::create([
             'nome_series' => 'Cow and Chicken',
-            'imagem_series' => 'http://assets2.pop-buzz.com/2015/39/cow-and-chicken-1443625206-responsive-large-0.jpg',
+            'imagem_series' => 'http://cfvod.kaltura.com/p/1745101/sp/174510100/thumbnail/entry_id/0_v5u374e8/version/100031/width/600/height/400',
             'ref_id_canal' => 1
         ]);
 
+        \App\Series::create([
+            'nome_series' => 'Powerpuff Girls',
+            'imagem_series' => 'http://tbsila.cdn.turner.com/toonla/images/cnemea/content/312/downloadable/the-powerpuff-girls-%232/uk/powerpuff-girls-600x400-2.jpg',
+            'ref_id_canal' => 1
+        ]);
 
     }
 }

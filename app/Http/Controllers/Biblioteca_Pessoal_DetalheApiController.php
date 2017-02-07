@@ -12,9 +12,7 @@ use Illuminate\Http\Request;
 class Biblioteca_Pessoal_DetalheApiController extends Controller
 {
     /**
-     * -> Lista todas as minhas aplicações.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function index()
     {
@@ -22,9 +20,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -32,10 +28,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -43,10 +36,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -54,10 +44,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -65,11 +52,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -77,10 +60,7 @@ class Biblioteca_Pessoal_DetalheApiController extends Controller
     }
 
     /**
-     * -> Eliminar aplicação
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {

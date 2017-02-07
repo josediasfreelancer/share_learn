@@ -235,3 +235,9 @@ input[type="email"], input[type="password"]{
     background-color:  #2dc3e8;
 
 }
+
+.googleicon{
+    background-color: red !important;
+    margin-top: 10px;
+    padding: 10px 0 !important;
+}

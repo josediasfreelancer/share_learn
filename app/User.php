@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     public function user_tem_apps(){
 
-        return $this->belongsToMany('App\Aplicacao', 'aplicacao_user', 'ref_id_users', 'ref_id_aplicacao');
+        return $this->belongsToMany('App\Aplicacao', 'aplicacao_user', 'ref_id_users', 'ref_id_aplicacao')->withTimestamps('created_at', 'updated_at');
     }
 
 //    new query

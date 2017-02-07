@@ -15,8 +15,7 @@ class SobreApiController extends Controller
 {
     public function __construct()
     {
-        header('Access-Control-Allow-Origin: *');
-//        $this->middleware('auth:api', ['except' => ['index','show']]);
+//        $this->middleware('auth:api');
     }
     /**
      * -> Lista os detalhes do utilizador
@@ -25,14 +24,7 @@ class SobreApiController extends Controller
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
 
-//        $user = User::get();
-//
-//        $output = json_encode(array('data' => $user));
-//
-//        return $output;
-        //        header('Access-Control-Allow-Origin: *');
         $array_sobre = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', 1)
@@ -61,15 +53,14 @@ class SobreApiController extends Controller
     }
 
     /**
-     * -> Lista os detalhes do utilizador
+     * -> Lista os detalhes do utilizador por id
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
         $array_sobre = DB::table('users')
             ->select('users.id_users', 'users.username', 'users.email', 'users.imagem_user', 'users.area_formacao', 'users.data_nascimento', 'users.localidade', 'users.nacionalidade','users.descricao')
             ->where('users.id_users', '=', $id)
